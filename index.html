@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0f5560" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0f1417" media="(prefers-color-scheme: dark)">
+<script>(function(){const T=localStorage.getItem('hfdqbank.theme')||'auto',h=document.documentElement;h.dataset.theme=T;const m=matchMedia('(prefers-color-scheme: dark)');const f=()=>{h.classList.toggle('sysdark',m.matches);const d=h.dataset.theme==='dark'||(h.dataset.theme==='auto'&&m.matches);document.querySelectorAll('meta[name=theme-color]').forEach(x=>x.setAttribute('content',d?'#0f1417':'#0f5560'))};f();m.addEventListener('change',f);window.__applyTheme=f})();</script>
+<link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icons/icon-192.png"><link rel="apple-touch-icon" href="./icons/icon-192.png"><meta name="mobile-web-app-capable" content="yes"><title>HFD Remediation Qbank</title>
+<style>
+:root{--bg:#eef1f5;--card:#fff;--line:#dde2ea;--ink:#111;--mut:#6b7280;--acc:#0f5560;--bad:#b42318;--badbg:#fdecec;--good:#1f7a3a;--goodbg:#e8f6ec;--trap:#fff6d6;--trapline:#e7c45a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+nav{background:#fff;border-bottom:1px solid var(--line);display:flex;gap:4px;align-items:center;padding:0 14px;overflow-x:auto;position:sticky;top:0;z-index:5}
+nav b{margin-right:12px;white-space:nowrap}nav a{color:#374151;text-decoration:none;padding:10px 8px;font-size:13px;white-space:nowrap;border-bottom:2px solid transparent}
+nav a.on{color:var(--ink);font-weight:600;border-color:var(--acc);background:#eef3f6}
+main{max-width:860px;margin:0 auto;padding:26px 16px 80px}
+.kicker{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);font-weight:600}
+h1{font-size:34px;margin:4px 0 0;letter-spacing:-.02em;font-weight:800}
+.head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap}
+.stats{display:flex;gap:28px}.stat .n{font-size:24px;font-weight:700}.stat .l{font-size:12px;color:var(--mut)}.saved{font-size:12px;color:var(--mut);margin-top:4px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:10px;box-shadow:0 1px 3px rgba(16,24,40,.06);padding:14px 16px;margin:14px 0}
+.map{display:flex;flex-wrap:wrap;gap:10px}.grp{display:flex;flex-wrap:wrap;gap:2px;padding-bottom:3px;border-bottom:3px solid}
+.sq{width:11px;height:13px;border-radius:2px;background:#d4d9e1;cursor:pointer}.sq.c{background:#2e9d57}.sq.x{background:#d64545}.sq.g{outline:1px dashed #7c3aed;outline-offset:-1px}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:#374151;margin:8px 0}.dot{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:middle}
+.weak h3{margin:0 0 6px;font-size:15px}.row{display:grid;grid-template-columns:230px 1fr 70px;gap:10px;align-items:center;font-size:13px;margin:4px 0}
+.bar{height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden}.bar i{display:block;height:100%}
+.few{font-size:10px;letter-spacing:.06em;color:var(--mut);font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.chip{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:2px 9px;background:#f8fafc;cursor:pointer}
+button,.btn{font:inherit;font-size:13px;border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 11px;cursor:pointer}
+button.pri{background:var(--acc);color:#fff;border-color:var(--acc)}
+.controls{display:flex;gap:8px;margin-top:14px}.controls input{flex:1}.controls input,.controls select{font:inherit;font-size:13px;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;min-width:0}
+.pills{display:flex;gap:6px;margin:10px 0;flex-wrap:wrap}.pill{border-radius:999px;padding:4px 11px}.pill.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.showing{font-size:12px;color:var(--mut);border-top:1px solid var(--line);padding-top:10px}
+.q .top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px}.badge{font-weight:700;border:1px solid var(--line);border-radius:5px;padding:0 6px;font-size:12px}
+.badge.miss{background:var(--bad);color:#fff;border-color:var(--bad)}.tag{color:#374151}.src{border:1px solid var(--line);border-radius:5px;padding:0 6px;color:var(--mut)}
+.src.gen{border-color:#a78bfa;color:#6d28d9;background:#f5f3ff}.missn{color:var(--bad);font-weight:600}.q .top .sp{flex:1}
+.q.gen{border-left:4px solid #a78bfa}
+.stem{margin:10px 0;white-space:pre-wrap}.ask{font-weight:700}
+.ch{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin:7px 0;cursor:pointer;background:#fff}
+.ch:hover{border-color:#9aa4b2}.ch .L{flex:none;width:22px;height:22px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-size:11px;font-weight:700;background:#f3f4f6}
+.ch.wrong{background:var(--badbg);border-color:#f0a8a8}.ch.wrong .L{background:var(--bad);color:#fff;border-color:var(--bad)}
+.ch.right{background:var(--goodbg);border-color:#9ad3ab}.ch.right .L{background:var(--good);color:#fff;border-color:var(--good)}
+.fb{border-top:1px solid var(--line);margin-top:12px;padding-top:10px}.verdict b{font-size:15px}.verdict .bad{color:var(--bad)}.verdict .ok{color:var(--good)}
+.expl{white-space:pre-wrap;margin:8px 0}.why{margin:10px 0}.why div{font-size:13px;margin:3px 0}.why .k{font-weight:700;margin-right:8px}
+.ev{font-size:12px;color:#374151;background:#f8fafc;border:1px solid var(--line);border-radius:6px;padding:6px 8px;margin:3px 0 6px 18px}
+.trap{background:var(--trap);border:1px solid var(--trapline);border-radius:8px;padding:8px 12px;margin:10px 0;font-size:14px}.trap .kicker{color:#8a6a00;margin-right:6px}
+.srcline{font-size:12px;color:var(--mut);margin:8px 0}
+.atlas-card h4{margin:0 0 6px;font-size:15px}.atlas-card .body{font-size:13.5px;color:#222}.atlas-card .meta{font-size:11px;color:var(--mut);margin-top:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}.grid .box{margin:0}
+.recall .atlas-card .body{display:none}.recall .atlas-card.open .body{display:block}.recall .atlas-card{cursor:pointer}
+h2.sec{font-size:20px;margin:26px 0 8px;padding-bottom:6px;border-bottom:2px solid var(--ink)}h2.sec .dot{width:12px;height:12px}
+.muted{color:var(--mut);font-size:13px}
+
+/* ---- dark mode (data-theme on <html>: auto|light|dark) ---- */
+:root{color-scheme:light}
+html[data-theme=dark]{--DARK:1}
+@media (prefers-color-scheme:dark){html[data-theme=auto]{--DARK:1}}
+html[data-theme=dark],html[data-theme=auto].sysdark{color-scheme:dark;--bg:#0f1417;--card:#182026;--line:#2c3740;--ink:#e3e8ec;--mut:#9aa7b2;--acc:#2a9aa8;--bad:#f08b80;--badbg:#3a1f1f;--good:#7fd19a;--goodbg:#173322;--trap:#33300f;--trapline:#7a6a24}
+html[data-theme=dark] body,html.sysdark[data-theme=auto] body{background:var(--bg);color:var(--ink)}
+html[data-theme=dark] :is(nav,button,.btn,.ch,.controls input,.controls select,.chip,.ev),html.sysdark[data-theme=auto] :is(nav,button,.btn,.ch,.controls input,.controls select,.chip,.ev){background:var(--card)!important;color:var(--ink);border-color:var(--line)}
+html[data-theme=dark] :is(nav a,.tag,.legend,.atlas-card .body,.ev),html.sysdark[data-theme=auto] :is(nav a,.tag,.legend,.atlas-card .body,.ev){color:#c9d2d9}
+html[data-theme=dark] nav a.on,html.sysdark[data-theme=auto] nav a.on{background:#1f2a31;color:var(--ink)}
+html[data-theme=dark] :is(.pill.on,button.pri),html.sysdark[data-theme=auto] :is(.pill.on,button.pri){background:#1f6f7a!important;color:#fff;border-color:#2a9aa8}
+html[data-theme=dark] .ch.wrong,html.sysdark[data-theme=auto] .ch.wrong{background:var(--badbg)!important;border-color:#7a3a35}
+html[data-theme=dark] .ch.right,html.sysdark[data-theme=auto] .ch.right{background:var(--goodbg)!important;border-color:#2f6b45}
+html[data-theme=dark] :is(.ch.wrong .L,.badge.miss),html.sysdark[data-theme=auto] :is(.ch.wrong .L,.badge.miss){background:#a8322a;color:#fff;border-color:#a8322a}
+html[data-theme=dark] .ch.right .L,html.sysdark[data-theme=auto] .ch.right .L{background:#23763f;color:#fff}
+html[data-theme=dark] .ch .L,html.sysdark[data-theme=auto] .ch .L{background:#24303a;border-color:var(--line)}
+html[data-theme=dark] .trap .kicker,html.sysdark[data-theme=auto] .trap .kicker{color:#e3c766}
+html[data-theme=dark] .sq,html.sysdark[data-theme=auto] .sq{background:#34414b}
+html[data-theme=dark] .bar,html.sysdark[data-theme=auto] .bar{background:#2c3740}
+html[data-theme=dark] .src,html.sysdark[data-theme=auto] .src{filter:brightness(.85)}
+html[data-theme=dark] .box,html.sysdark[data-theme=auto] .box{box-shadow:none}
+img{filter:none!important}
+/* ---- phone layout ---- */
+img{max-width:100%;height:auto}
+html,body{overflow-x:hidden}
+@media (max-width:520px){
+ main{padding:14px 10px 70px}h1{font-size:26px}.stats{gap:16px}
+ .row{grid-template-columns:1fr 60px;}.row>*:first-child{grid-column:1/-1}
+ nav{padding:0 6px}nav a{padding:13px 8px;min-height:44px;display:inline-flex;align-items:center}
+ button,.btn,.chip,.pill{min-height:44px;padding:10px 14px}
+ .ch{min-height:48px;padding:12px}.controls{flex-wrap:wrap}.controls input,.controls select{min-height:44px;width:100%}
+ .sq{width:16px;height:18px}.grid{grid-template-columns:1fr}
+ .ev{margin-left:4px}.stem,.expl{word-break:break-word}
+}
+#themebtn{margin-left:6px;white-space:nowrap}
+</style></head><body>
+<nav id="nav"></nav>
+<main id="app"></main>
+
+<script id="app-src" type="text/plain">
+const D=window.__D;
+const KEY='hfdqbank.v1';
+let S=JSON.parse(localStorage.getItem(KEY)||'{"a":{},"f":{}}');
+const save=()=>localStorage.setItem(KEY,JSON.stringify(S));
+const PAL=['#3b82f6','#db2777','#8b5cf6','#dc2626','#f59e0b','#a16207','#16a34a','#0d9488','#65a30d','#ca8a04','#64748b','#0ea5e9','#e11d48','#7c3aed','#059669','#d97706','#4f46e5','#be123c','#15803d','#0891b2','#9333ea','#b45309','#475569'];
+const lecColor={};D.lectures.forEach((l,i)=>lecColor[l.lecture]=PAL[i%PAL.length]);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+D.questions.forEach((q,i)=>{q.n=i+1});
+let view={mode:'q',block:'1'},ui={filter:'all',search:'',lec:'',shuffle:false,order:null,recall:false,asearch:'',open:{}};
+function route(){const h=location.hash.slice(1)||'f-1';const [m,b]=h.split('-');view={mode:m==='a'?'a':'q',tab:m,block:b||'1'};ui.lec='';ui.order=null;render()}
+window.addEventListener('hashchange',route);
+function nav(){const t=[];const on=(m,b)=>view.tab===m&&view.block===b?'on':'';for(const b of Object.keys(D.blocks)){const qb=D.questions.filter(q=>q.block===b);const nf=qb.filter(q=>q.tier==='first-pass').length,nb=qb.length-nf;
+ t.push(`<a href="#f-${b}" class="${on('f',b)}">B${b} First-pass Qbank (${nf})</a>`,`<a href="#b-${b}" class="${on('b',b)}">B${b} Block Qbank (${nb})</a>`,`<a href="#a-${b}" class="${on('a',b)}">B${b} Atlas</a>`)}
+ t.push(`<a href="#q-all" class="${on('q','all')}">All (${D.questions.length})</a>`);
+ document.getElementById('nav').innerHTML=`<b>HFD Remediation</b>`+t.join('')+`<span style="flex:1"></span><button id="themebtn" onclick="cycleTheme()" aria-label="Color theme">${themeLabel()}</button>`}
+function themeLabel(){const t=document.documentElement.dataset.theme;return t==='dark'?'🌙 Dark':t==='light'?'☀️ Light':'◐ Auto'}
+function cycleTheme(){const h=document.documentElement,o=['auto','light','dark'];const t=o[(o.indexOf(h.dataset.theme)+1)%3];h.dataset.theme=t;localStorage.setItem('hfdqbank.theme',t);window.__applyTheme&&__applyTheme();const b=document.getElementById('themebtn');if(b)b.textContent=themeLabel()}
+const inBlock=q=>(view.block==='all'||q.block===view.block)&&(view.tab==='f'?q.tier==='first-pass':view.tab==='b'?q.tier!=='first-pass':true);
+function blockName(){const t=view.tab==='f'?' — First-pass':view.tab==='b'?' — Block Qbank':'';return (view.block==='all'?'All Blocks':`Block ${view.block}: ${D.blocks[view.block]}`)+t}
+function lecturesIn(){return D.lectures.filter(l=>view.block==='all'||l.block===view.block).map(l=>l.lecture)}
+function status(q){const a=S.a[q.id];if(!a||!a.first)return'u';return (q.format==='short-answer'?a.first==='got':a.first===q.answer)?'c':'x'}
+function render(){nav();view.mode==='a'?renderAtlas():renderQ()}
+function renderQ(){
+ const qs=D.questions.filter(inBlock);qs.forEach((q,i)=>q.n=i+1);const ans=qs.filter(q=>status(q)!=='u'),corr=ans.filter(q=>status(q)==='c');
+ const lecs=lecturesIn().filter(l=>qs.some(q=>q.lecture===l));
+ const map=lecs.map(l=>`<div class="grp" style="border-color:${lecColor[l]}" title="${esc(l)}">`+qs.filter(q=>q.lecture===l).map(q=>`<span class="sq ${status(q)==='u'?'':status(q)} ${q.origin==='generated'?'g':''}" title="Q${q.n} · ${esc(l)}" onclick="jump('${q.id}')"></span>`).join('')+`</div>`).join('');
+ const legend=lecs.map(l=>`<span><i class="dot" style="background:${lecColor[l]}"></i>${esc(l)}</span>`).join('');
+ document.getElementById('app').innerHTML=`
+ <div class="head"><div><div class="kicker">MS1 HFD remediation · ${lecs.length} lectures · ${qs.length} questions</div><h1>${esc(blockName())}</h1></div>
+ <div><div class="stats"><div class="stat"><div class="n mono">${ans.length}</div><div class="l">of ${qs.length} answered</div></div>
+ <div class="stat"><div class="n mono">${ans.length?Math.round(100*corr.length/ans.length)+'%':'–'}</div><div class="l">correct on first try</div></div></div>
+ <div class="saved">Answers saved in this browser</div></div></div>
+ <div class="box"><div class="map">${map}</div></div>
+ <div class="legend">${legend}<span><i class="dot" style="outline:1px dashed #7c3aed;background:#d4d9e1"></i>generated from lecture</span></div>
+ <div class="box weak" id="weak"></div>
+ <div class="controls"><input id="srch" placeholder="Search stems, answers, explanations (try: perichondrium, NAPQI, HPV)" value="${esc(ui.search)}">
+ <select id="lecsel"><option value="">All lectures</option>${lecs.map(l=>`<option ${ui.lec===l?'selected':''}>${esc(l)}</option>`).join('')}</select>
+ <button id="shuf">${ui.shuffle?'Original order':'Shuffle order'}</button></div>
+ <div class="pills" id="pills"></div><div class="showing" id="showing"></div><div id="list"></div>`;
+ weak(qs);
+ const s=document.getElementById('srch');s.oninput=()=>{ui.search=s.value;list()};
+ document.getElementById('lecsel').onchange=e=>{ui.lec=e.target.value;list()};
+ document.getElementById('shuf').onclick=()=>{ui.shuffle=!ui.shuffle;ui.order=null;renderQ()};
+ list();
+}
+function weak(qs){
+ const el=document.getElementById('weak');const ans=qs.filter(q=>status(q)!=='u');
+ if(!ans.length){el.innerHTML=`<div style="display:flex;justify-content:space-between"><h3>Where you need work</h3><span class="muted">fills in as you answer</span></div><div>Answer a few questions and this panel ranks the lectures from weakest to strongest, using your first attempt at each question, and lists every concept you missed.</div>`;return}
+ const rows={};ans.forEach(q=>{const r=rows[q.lecture]||(rows[q.lecture]={n:0,c:0});r.n++;if(status(q)==='c')r.c++});
+ const sorted=Object.entries(rows).sort((a,b)=>(a[1].c/a[1].n)-(b[1].c/b[1].n)||b[1].n-a[1].n);
+ const missed=ans.filter(q=>status(q)==='x');
+ el.innerHTML=`<div style="display:flex;justify-content:space-between"><h3>Where you need work</h3><span class="muted">${ans.length<10?'early read — answer ~10+ for a real ranking':'ranked by first-try accuracy'}</span></div>`+
+ sorted.map(([l,r])=>{const p=Math.round(100*r.c/r.n);return `<div class="row"><span><i class="dot" style="background:${lecColor[l]}"></i>${esc(l)}</span><div class="bar"><i style="width:${p}%;background:${p<60?'#d64545':p<80?'#e0a526':'#2e9d57'}"></i></div><span class="mono">${p}% <span class="muted">${r.c}/${r.n}</span>${r.n<3?'<div class="few">TOO FEW</div>':''}</span></div>`}).join('')+
+ (missed.length?`<div class="kicker" style="margin-top:10px">Concepts you missed</div><div class="chips">${missed.map(q=>`<span class="chip" onclick="jump('${q.id}')" title="${esc(q.lecture)}">${esc(concept(q))}</span>`).join('')}</div>
+ <div style="display:flex;gap:8px"><button onclick="ui.filter='x';list()">Show incorrect</button><button class="pri" onclick="retryAll()">Retry all incorrect</button></div>`:'');
+}
+function concept(q){const t=(q.answer&&q.choices[q.answer])||q.stem;return t.split(/\s+/).slice(0,7).join(' ')+(t.split(/\s+/).length>7?'…':'')}
+function retryAll(){D.questions.filter(inBlock).forEach(q=>{if(status(q)==='x'){S.a[q.id].retry=true;delete S.a[q.id].last;delete S.a[q.id].reveal}});save();ui.filter='x';renderQ()}
+function matches(q){if(ui.lec&&q.lecture!==ui.lec)return false;
+ const st=status(q);if(ui.filter==='u'&&st!=='u')return false;if(ui.filter==='c'&&st!=='c')return false;if(ui.filter==='x'&&st!=='x')return false;if(ui.filter==='f'&&!S.f[q.id])return false;
+ if(ui.search){const s=ui.search.toLowerCase();const hay=(q.stem+' '+(q.model_answer||'')+' '+Object.values(q.choices).join(' ')+' '+q.explanation+' '+Object.values(q.why||{}).join(' ')+' '+q.lecture).toLowerCase();if(!s.split(/\s+/).every(w=>hay.includes(w)))return false}
+ return true}
+function list(){
+ let qs=D.questions.filter(inBlock);const base=qs.filter(q=>(!ui.lec||q.lecture===ui.lec));
+ const cnt={all:base.length,u:base.filter(q=>status(q)==='u').length,c:base.filter(q=>status(q)==='c').length,x:base.filter(q=>status(q)==='x').length,f:base.filter(q=>S.f[q.id]).length};
+ document.getElementById('pills').innerHTML=[['all','All'],['u','Unanswered'],['c','Correct'],['x','Incorrect'],['f','Flagged']].map(([k,l])=>`<button class="pill ${ui.filter===k?'on':''}" onclick="ui.filter='${k}';list()">${l} <b class="mono">${cnt[k]}</b></button>`).join('');
+ if(ui.shuffle){if(!ui.order){ui.order=qs.map(q=>q.id).sort(()=>Math.random()-.5)}const pos=Object.fromEntries(ui.order.map((id,i)=>[id,i]));qs=[...qs].sort((a,b)=>pos[a.id]-pos[b.id])}
+ const shown=qs.filter(matches);
+ document.getElementById('showing').textContent=`Showing ${shown.length} of ${qs.length} questions`;
+ document.getElementById('list').innerHTML=shown.map(card).join('');
+}
+function card(q){
+ const a=S.a[q.id]||{},st=status(q),gen=q.origin==='generated',chosen=a.last;
+ const missedN=a.missed||0;if(q.format==='short-answer')return saCard(q,a,st,missedN);
+ let ch=Object.entries(q.choices).map(([L,t])=>{let c='';if(chosen){if(L===q.answer)c='right';else if(L===chosen)c='wrong'}
+  return `<div class="ch ${c}" onclick="answer('${q.id}','${L}')"><span class="L">${L}</span><span>${esc(t)}</span></div>`}).join('');
+ let fb='';
+ if(chosen){const ok=chosen===q.answer;
+  const why=gen&&q.why?`<div class="why"><div class="kicker">Why each choice</div>${Object.entries(q.choices).map(([L,t])=>`<div><span class="k" style="color:${L===q.answer?'var(--good)':'var(--bad)'}">${L}</span>${esc(q.why[L]||'')}</div>`).join('')}</div>`:'';
+  const ev=!gen&&q.choice_evidence&&Object.keys(q.choice_evidence).length?`<details class="why"><summary class="kicker" style="cursor:pointer">Why each choice — lecture evidence</summary><div><span style="text-transform:none;letter-spacing:0;font-weight:400">(closest passage in the lecture for each choice, quoted verbatim; not a verdict)</span>${Object.keys(q.choices).map(L=>{const e=q.choice_evidence[L];return `<div><span class="k" style="color:${L===q.answer?'var(--good)':'var(--bad)'}">${L}</span>${L===q.answer?'<b>Correct.</b> ':''}${e?`<div class="ev">“${esc(e.passage)}” <span class="muted">— ${esc(e.file)}</span></div>`:'<span class="muted">no distinct lecture passage</span>'}</div>`}).join('')}</div></details>`:'';
+  fb=`<div class="fb"><div class="verdict">${ok?'<b class="ok">Correct</b>':'<b class="bad">Incorrect</b>'} <span class="muted">You chose ${chosen}. The answer is ${q.answer}.</span></div>
+  ${q.explanation?`<div class="expl">${esc(q.explanation)}</div>`:''}${why}${ev}${qaEv(q)}
+  ${q.exam_trap?`<div class="trap"><span class="kicker">Exam trap</span>${esc(q.exam_trap)}</div>`:''}
+  <div class="srcline">${esc(q.lecture)} · ${esc(q.source)}${q.lecture_source&&!gen?' · lecture: '+esc(q.lecture_source):''}${q.explanation_source&&q.explanation_source!=='HFD Remediation Questions doc'?' · explanation from '+esc(q.explanation_source):''}</div>
+  <button onclick="retry('${q.id}')">Try again</button></div>`}
+ return `<div class="box q ${gen?'gen':''}" id="${q.id}"><div class="top"><span class="badge ${st==='x'?'miss':''}">Q${q.n}</span><span class="tag"><i class="dot" style="background:${lecColor[q.lecture]}"></i>${esc(q.lecture)}</span>
+ ${tierBadge(q)}<span class="src ${gen?'gen':''}">${gen?'Generated from lecture':esc(q.doc_quiz)}</span>${missedN?`<span class="missn">Missed ${missedN}×</span>`:''}<span class="sp"></span>
+ <button onclick="flag('${q.id}')">${S.f[q.id]?'★ Flagged':'Flag'}</button></div>
+ <div class="stem ask">${esc(q.stem)}</div>${figs(q)}${ch}${fb}</div>`}
+
+const TIER={'first-pass':['First-pass','#e0f2f1','#0f5560'],'junqueira':['Junqueira','#fef3c7','#92400e'],'lecture-generated':['Lecture-generated','#f5f3ff','#6d28d9'],'robbins-review':['Robbins Review','#fee2e2','#991b1b']};
+function tierBadge(q){const t=TIER[q.tier]||[q.tier,'#eee','#333'];return `<span class="src" style="background:${t[1]};color:${t[2]};border-color:${t[2]}33">${t[0]}</span>`}
+function figs(q){return (q.figures&&q.figures.length)?`<div class="figs" style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0">${q.figures.map(f=>`<img src="${window.FIG_BASE||'/qbank/figures/'}${encodeURIComponent(f)}" alt="Figure for ${esc(q.id)}" loading="lazy" style="max-width:100%;max-height:340px;border:1px solid #ddd;border-radius:6px;cursor:zoom-in" onclick="zoomFig(this.src)">`).join('')}</div>`:''}
+function zoomFig(src){const o=document.createElement('div');o.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;overflow:auto;touch-action:pinch-zoom pan-x pan-y;-webkit-overflow-scrolling:touch';let big=false;o.innerHTML=`<button aria-label="Close" style="position:fixed;top:8px;right:8px;z-index:2;min-width:44px;min-height:44px;font-size:20px;background:#182026;color:#fff;border:1px solid #2c3740;border-radius:22px">✕</button><div style="min-height:100%;display:flex;align-items:center;justify-content:center"><img src="${src}" style="max-width:100vw;max-height:100vh;touch-action:pinch-zoom"></div>`;const im=o.querySelector('img');im.onclick=e=>{e.stopPropagation();big=!big;im.style.maxWidth=big?'none':'100vw';im.style.maxHeight=big?'none':'100vh';im.style.width=big?'200vw':''};o.querySelector('button').onclick=()=>o.remove();o.onclick=e=>{if(e.target===o||e.target===o.firstElementChild.nextElementSibling)o.remove()};document.addEventListener('keydown',function k(e){if(e.key==='Escape'){o.remove();document.removeEventListener('keydown',k)}});document.body.appendChild(o)}
+function qaEv(q){if(!q.qa)return '';const st=q.qa.reasoning_steps||[];const qs=(q.qa.quotes&&q.qa.quotes.length)?q.qa.quotes:(q.qa.quote?[{quote:q.qa.quote,file:q.qa.file}]:[]);let h='';if(q.qa.image_observation)h+=`<div class="kicker" style="margin-top:6px">Image observation</div><div class="expl">${esc(q.qa.image_observation)}</div>`;if(st.length)h+=`<div class="kicker" style="margin-top:6px">Reasoning path</div><ol class="expl" style="margin:4px 0 4px 18px;padding-left:12px">${st.map(x=>`<li>${esc(x)}</li>`).join('')}</ol>`;if(qs.length)h+=`<div class="kicker" style="margin-top:6px">Lecture evidence (verified verbatim)</div>`+qs.map(e=>`<div class="expl">“${esc(e.quote)}” <span class="srcline">— ${esc(e.file)}</span></div>`).join('');return h}
+function saCard(q,a,st,missedN){const shown=a.reveal;
+ return `<div class="box q" id="${q.id}" style="border-left:4px solid #d97706"><div class="top"><span class="badge ${st==='x'?'miss':''}">Q${q.n}</span><span class="tag"><i class="dot" style="background:${lecColor[q.lecture]}"></i>${esc(q.lecture)}</span>${tierBadge(q)}<span class="src">Junqueira ch study question · short answer</span>${missedN?`<span class="missn">Missed ${missedN}×</span>`:''}<span class="sp"></span><button onclick="flag('${q.id}')">${S.f[q.id]?'★ Flagged':'Flag'}</button></div>
+ <div class="stem ask">${esc(q.stem)}</div>${figs(q)}
+ ${!shown?`<p class="muted">Answer in your head (or out loud), then reveal Junqueira's answer and mark yourself.</p><button class="pri" onclick="reveal('${q.id}')">Show answer</button>`:
+ `<div class="fb">${a.last?`<div class="verdict">${a.last==='got'?'<b class="ok">Correct</b>':'<b class="bad">Incorrect</b>'} <span class="muted">Self-graded.</span></div>`:''}
+ <div class="kicker" style="margin-top:6px">Junqueira's answer</div><div class="expl">${esc(q.model_answer)}</div>${qaEv(q)}
+ ${a.last?'':`<div style="display:flex;gap:8px"><button onclick="sa('${q.id}','got')" style="border-color:#9ad3ab;background:var(--goodbg)">I got it</button><button onclick="sa('${q.id}','miss')" style="border-color:#f0a8a8;background:var(--badbg)">I missed it</button></div>`}
+ <div class="srcline">${esc(q.lecture)} · ${esc(q.source)}</div>${a.last?`<button onclick="retry('${q.id}')">Try again</button>`:''}</div>`}</div>`}
+function reveal(id){(S.a[id]||(S.a[id]={})).reveal=true;save();refreshCard(D.questions.find(x=>x.id===id))}
+function sa(id,v){const a=S.a[id];if(!a.first)a.first=v;a.last=v;if(v==='miss')a.missed=(a.missed||0)+1;save();refreshCard(D.questions.find(x=>x.id===id))}
+function answer(id,L){const q=D.questions.find(x=>x.id===id);const a=S.a[id]||(S.a[id]={});if(a.last)return;
+ if(!a.first)a.first=L;a.last=L;if(L!==q.answer)a.missed=(a.missed||0)+1;save();refreshCard(q)}
+function retry(id){delete S.a[id].last;delete S.a[id].reveal;save();refreshCard(D.questions.find(x=>x.id===id))}
+function flag(id){S.f[id]=!S.f[id];if(!S.f[id])delete S.f[id];save();refreshCard(D.questions.find(x=>x.id===id))}
+function refreshCard(q){const el=document.getElementById(q.id);if(el)el.outerHTML=card(q);
+ const qs=D.questions.filter(inBlock),ans=qs.filter(x=>status(x)!=='u'),corr=ans.filter(x=>status(x)==='c');
+ const n=document.querySelectorAll('.stat .n');n[0].textContent=ans.length;n[1].textContent=ans.length?Math.round(100*corr.length/ans.length)+'%':'–';
+ document.querySelectorAll('.sq').forEach(s=>{});weak(qs);
+ const sq=document.querySelectorAll('.map .sq');let i=0;const lecs=lecturesIn().filter(l=>qs.some(x=>x.lecture===l));lecs.forEach(l=>qs.filter(x=>x.lecture===l).forEach(x=>{const e=sq[i++];if(e)e.className=`sq ${status(x)==='u'?'':status(x)} ${x.origin==='generated'?'g':''}`}));
+ const p=document.getElementById('pills');if(p){const keep=window.scrollY;list();window.scrollTo(0,keep)}}
+function jump(id){const q=D.questions.find(x=>x.id===id);ui.filter='all';ui.search='';ui.lec='';if(!document.getElementById(id)){renderQ()}const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
+function renderAtlas(){
+ const b=view.block==='all'?'1':view.block;const cards=D.atlas.filter(c=>c.block===b);const lecs=D.lectures.filter(l=>l.block===b).map(l=>l.lecture);
+ const s=ui.asearch.toLowerCase();const vis=cards.filter(c=>!s||(c.title+' '+c.body+' '+c.lecture).toLowerCase().includes(s));
+ document.getElementById('app').innerHTML=`<h1>Block ${b} Atlas</h1><p class="muted" style="max-width:640px">Key-concept cards for ${esc(D.blocks[b])}, quoted directly from the lecture study guides, handouts and slides in your MS1 Remediation Study folder. Lecture content only. Each card cites its file.</p>
+ <div class="controls"><input id="asrch" placeholder="Search a concept, cell, gene or buzzword" value="${esc(ui.asearch)}"><button id="rec" class="${ui.recall?'pri':''}">Recall mode</button><span class="muted" style="align-self:center">${vis.length} of ${cards.length} cards</span></div>
+ <div class="chips">${lecs.map(l=>`<a class="chip" style="text-decoration:none;color:inherit" href="javascript:void(0)" onclick="document.getElementById('L-${lecs.indexOf(l)}')?.scrollIntoView({behavior:'smooth'})"><i class="dot" style="background:${lecColor[l]}"></i>${esc(l)}</a>`).join('')}</div>
+ <div class="${ui.recall?'recall':''}">${lecs.map((l,i)=>{const cs=vis.filter(c=>c.lecture===l);if(!cs.length)return'';return `<h2 class="sec" id="L-${i}"><i class="dot" style="background:${lecColor[l]}"></i>${esc(l)}</h2>${ui.recall?'<p class="muted">Recall mode: say the key points, then click a card to check.</p>':''}<div class="grid">${cs.map(c=>`<div class="box atlas-card ${ui.open[c.id]?'open':''}" onclick="if(ui.recall){ui.open['${c.id}']=!ui.open['${c.id}'];this.classList.toggle('open')}"><h4>${esc(c.title)}</h4><div class="body">${esc(c.body)}</div><div class="meta">${esc(c.lecture)} · ${esc(c.file)}</div></div>`).join('')}</div>`}).join('')}</div>`;
+ const a=document.getElementById('asrch');a.oninput=()=>{ui.asearch=a.value;const pos=a.selectionStart;renderAtlas();const n=document.getElementById('asrch');n.focus();n.setSelectionRange(pos,pos)};
+ document.getElementById('rec').onclick=()=>{ui.recall=!ui.recall;ui.open={};renderAtlas()};
+}
+route();
+</script>
+<script>
+window.FIG_BASE='./figures/';window.HIDE_LIBRARY=true;
+if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js',{scope:'./'}).then(r=>{window.__swReg=r}).catch(e=>console.warn('sw',e))}
+fetch('./hfd_qbank.json').then(r=>r.json()).then(d=>{window.__D=d;const s=document.createElement('script');s.textContent=document.getElementById('app-src').textContent;document.body.appendChild(s)})
+.catch(e=>{document.getElementById('app').textContent='Could not load questions: '+e});
+</script></body></html>
