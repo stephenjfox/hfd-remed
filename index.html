@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="./vendor/katex/katex.min.css"><script src="./vendor/katex/katex.min.js"></script><script src="./vendor/katex/contrib/auto-render.min.js"></script><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0f5560" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0f1417" media="(prefers-color-scheme: dark)">
 <script>(function(){const T=localStorage.getItem('hfdqbank.theme')||'auto',h=document.documentElement;h.dataset.theme=T;const m=matchMedia('(prefers-color-scheme: dark)');const f=()=>{h.classList.toggle('sysdark',m.matches);const d=h.dataset.theme==='dark'||(h.dataset.theme==='auto'&&m.matches);document.querySelectorAll('meta[name=theme-color]').forEach(x=>x.setAttribute('content',d?'#0f1417':'#0f5560'))};f();m.addEventListener('change',f);window.__applyTheme=f})();</script>
 <link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icons/icon-192.png"><link rel="apple-touch-icon" href="./icons/icon-192.png"><meta name="mobile-web-app-capable" content="yes"><title>HFD Remediation Qbank</title>
@@ -82,6 +82,7 @@ html,body{overflow-x:hidden}
  .ev{margin-left:4px}.stem,.expl{word-break:break-word}
 }
 #themebtn{margin-left:6px;white-space:nowrap}
+.katex{color:inherit;font-size:1.05em}.katex-display{overflow-x:auto;overflow-y:hidden}
 </style></head><body>
 <nav id="nav"></nav>
 <main id="app"></main>
@@ -108,7 +109,9 @@ const inBlock=q=>(view.block==='all'||q.block===view.block)&&(view.tab==='f'?q.t
 function blockName(){const t=view.tab==='f'?' — First-pass':view.tab==='b'?' — Block Qbank':'';return (view.block==='all'?'All Blocks':`Block ${view.block}: ${D.blocks[view.block]}`)+t}
 function lecturesIn(){return D.lectures.filter(l=>view.block==='all'||l.block===view.block).map(l=>l.lecture)}
 function status(q){const a=S.a[q.id];if(!a||!a.first)return'u';return (q.format==='short-answer'?a.first==='got':a.first===q.answer)?'c':'x'}
-function render(){nav();view.mode==='a'?renderAtlas():renderQ()}
+const MATH_DELIMS=[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}];
+function mathify(el){if(el&&window.renderMathInElement){try{renderMathInElement(el,{delimiters:MATH_DELIMS,throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code','input','select','option']})}catch(e){console.warn('katex',e)}}}
+function render(){nav();view.mode==='a'?renderAtlas():renderQ();mathify(document.getElementById('app'))}
 function renderQ(){
  const qs=D.questions.filter(inBlock);qs.forEach((q,i)=>q.n=i+1);const ans=qs.filter(q=>status(q)!=='u'),corr=ans.filter(q=>status(q)==='c');
  const lecs=lecturesIn().filter(l=>qs.some(q=>q.lecture===l));
@@ -156,7 +159,7 @@ function list(){
  if(ui.shuffle){if(!ui.order){ui.order=qs.map(q=>q.id).sort(()=>Math.random()-.5)}const pos=Object.fromEntries(ui.order.map((id,i)=>[id,i]));qs=[...qs].sort((a,b)=>pos[a.id]-pos[b.id])}
  const shown=qs.filter(matches);
  document.getElementById('showing').textContent=`Showing ${shown.length} of ${qs.length} questions`;
- document.getElementById('list').innerHTML=shown.map(card).join('');
+ document.getElementById('list').innerHTML=shown.map(card).join('');mathify(document.getElementById('list'));
 }
 function card(q){
  const a=S.a[q.id]||{},st=status(q),gen=q.origin==='generated',chosen=a.last;
@@ -196,7 +199,7 @@ function answer(id,L){const q=D.questions.find(x=>x.id===id);const a=S.a[id]||(S
  if(!a.first)a.first=L;a.last=L;if(L!==q.answer)a.missed=(a.missed||0)+1;save();refreshCard(q)}
 function retry(id){delete S.a[id].last;delete S.a[id].reveal;save();refreshCard(D.questions.find(x=>x.id===id))}
 function flag(id){S.f[id]=!S.f[id];if(!S.f[id])delete S.f[id];save();refreshCard(D.questions.find(x=>x.id===id))}
-function refreshCard(q){const el=document.getElementById(q.id);if(el)el.outerHTML=card(q);
+function refreshCard(q){const el=document.getElementById(q.id);if(el){el.outerHTML=card(q);mathify(document.getElementById(q.id))}
  const qs=D.questions.filter(inBlock),ans=qs.filter(x=>status(x)!=='u'),corr=ans.filter(x=>status(x)==='c');
  const n=document.querySelectorAll('.stat .n');n[0].textContent=ans.length;n[1].textContent=ans.length?Math.round(100*corr.length/ans.length)+'%':'–';
  document.querySelectorAll('.sq').forEach(s=>{});weak(qs);
