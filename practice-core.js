@@ -122,6 +122,34 @@
     return out;
   }
 
-  const api = { BLOCKS, MODES, MODE_NAME, modeOf, isSA, rng, shuffle, pools, poolSizes, fromPercent, resolve, priority, draw, score, correct };
+  // ---- stable option identity ----
+  // q.oid maps each display letter to the option's stable id (its letter in the source). Answers are
+  // saved by id and shown by letter, so a reshuffled build never moves a saved answer onto other text.
+  // Saves from before the shuffle hold source letters, which are exactly those ids. An id that no
+  // longer exists loads as '?id' (never equal to a letter, so it grades as wrong) and saves back as id.
+  function optId(q, v) {
+    if (typeof v !== 'string') return v;
+    if (v[0] === '?') return v.slice(1);
+    return q && q.oid && q.oid[v] != null ? q.oid[v] : v;
+  }
+  function optLetter(q, v) {
+    if (typeof v !== 'string' || !q || !q.oid) return v;
+    for (const L in q.oid) if (q.oid[L] === v) return L;
+    return v[0] === '?' ? v : '?' + v;
+  }
+  const mapVals = (o, f) => { const r = {}; for (const k in o) r[k] = f(k, o[k]); return r; };
+  // main qbank progress {a:{qid:{first,last,...}}, f:{...}}
+  function mapProgress(byId, prog, f) {
+    if (!prog || !prog.a) return prog;
+    return Object.assign({}, prog, { a: mapVals(prog.a, (id, x) => { const y = Object.assign({}, x); for (const k of ['first', 'last']) if (y[k] != null) y[k] = f(byId[id], y[k]); return y; }) });
+  }
+  // practice store {current:{answers}, history:[{answers}]}
+  function mapPractice(byId, st, f) {
+    if (!st) return st;
+    const ans = o => (o && o.answers ? Object.assign({}, o, { answers: mapVals(o.answers, (id, v) => f(byId[id], v)) }) : o);
+    return Object.assign({}, st, { current: ans(st.current), history: (st.history || []).map(ans) });
+  }
+
+  const api = { BLOCKS, MODES, MODE_NAME, modeOf, isSA, rng, shuffle, pools, poolSizes, fromPercent, resolve, priority, draw, score, correct, optId, optLetter, mapProgress, mapPractice };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.PTCore = api;
 })(typeof self !== 'undefined' ? self : this);

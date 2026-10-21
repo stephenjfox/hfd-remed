@@ -9,7 +9,11 @@
   let st; try { st = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) { st = null; }
   st = Object.assign({ settings: JSON.parse(JSON.stringify(DEF)), presets: {}, history: [], current: null }, st || {});
   st.settings = Object.assign(JSON.parse(JSON.stringify(DEF)), st.settings);
-  const save = () => localStorage.setItem(KEY, JSON.stringify(st));
+  // Answers are saved by stable option id and held in memory by display letter (PTCore.optId/optLetter).
+  // D is only defined once the app script runs, so the stored ids are converted on first use.
+  let byId = null;
+  const ready = () => { if (!byId) { byId = Object.fromEntries(D.questions.map(q => [q.id, q])); st = C.mapPractice(byId, st, C.optLetter); } };
+  const save = () => { ready(); localStorage.setItem(KEY, JSON.stringify(C.mapPractice(byId, st, C.optId))); };
   const missedStore = () => { try { return JSON.parse(localStorage.getItem(MKEY) || '{}'); } catch (e) { return {}; } };
   const qById = id => D.questions.find(q => q.id === id);
   const $ = id => document.getElementById(id);
@@ -176,4 +180,5 @@ ${(h.capped || []).length ? `<div class="muted">${h.capped.map(esc).join('<br>')
     missed: missedStore, clearMissed() { localStorage.removeItem(MKEY); },
     _state: () => st,
   };
+  for (const k of Object.keys(window.PT)) { const f = window.PT[k]; if (typeof f === 'function' && k !== 'missed' && k !== 'clearMissed') window.PT[k] = function () { ready(); return f.apply(this, arguments); }; }
 })();

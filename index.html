@@ -109,13 +109,15 @@ html[data-theme=dark] :is(.pt-navg button.ans,.pt-legend .ans),html.sysdark[data
 </style></head><body>
 <nav id="nav"></nav>
 <main id="app"></main>
-
 <script src="./practice-core.js"></script><script src="./practice.js"></script>
+
 <script id="app-src" type="text/plain">
 const D=window.__D;
 const KEY='hfdqbank.v1';
-let S=JSON.parse(localStorage.getItem(KEY)||'{"a":{},"f":{}}');
-const save=()=>localStorage.setItem(KEY,JSON.stringify(S));
+const QID=Object.fromEntries(D.questions.map(q=>[q.id,q]));
+// answers are saved by stable option id (q.oid) and held here by display letter (see PTCore.optId)
+let S=PTCore.mapProgress(QID,JSON.parse(localStorage.getItem(KEY)||'{"a":{},"f":{}}'),PTCore.optLetter);
+const save=()=>localStorage.setItem(KEY,JSON.stringify(PTCore.mapProgress(QID,S,PTCore.optId)));
 const PAL=['#3b82f6','#db2777','#8b5cf6','#dc2626','#f59e0b','#a16207','#16a34a','#0d9488','#65a30d','#ca8a04','#64748b','#0ea5e9','#e11d48','#7c3aed','#059669','#d97706','#4f46e5','#be123c','#15803d','#0891b2','#9333ea','#b45309','#475569'];
 const lecColor={};D.lectures.forEach((l,i)=>lecColor[l.lecture]=PAL[i%PAL.length]);
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
