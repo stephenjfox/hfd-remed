@@ -83,10 +83,34 @@ html,body{overflow-x:hidden}
 }
 #themebtn{margin-left:6px;white-space:nowrap}
 .katex{color:inherit;font-size:1.05em}.katex-display{overflow-x:auto;overflow-y:hidden}
+/* ---- practice test ---- */
+.pt h3{margin:0 0 8px;font-size:15px}.pt-six{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;margin-bottom:6px}
+.pt-chk{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer;font-size:14px}.pt-chk input{width:20px;height:20px;flex:none;margin:1px 0 0;accent-color:var(--acc)}
+.pt input[type=number],.pt input:not([type]),.pt select{font:inherit;font-size:14px;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);min-width:0}
+.pt input[type=number]{width:84px}.pt-inline{display:inline-flex;gap:8px;align-items:center;font-size:13px}
+.pt-split{display:grid;gap:8px}.pt-split label{display:grid;grid-template-columns:34px 1fr auto;gap:2px 10px;align-items:center}.pt-split .pt-pool{grid-column:2/-1;font-size:12px}.pt-bname{font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pt-in{display:inline-flex;gap:4px;align-items:center}.pt-val{margin:10px 0;font-size:13px}.pt-val .ok,.pt-ok{color:var(--good);font-weight:600}.pt-val .bad{color:var(--bad);font-weight:600}.pt-val .warn{color:#a16207}
+.pt-presets{display:flex;flex-wrap:wrap;gap:8px;border-top:1px solid var(--line);padding-top:10px}.pt-presets input{flex:1}
+.pt-start{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:14px 0}.pt-start .pri{font-size:15px;padding:10px 22px}button:disabled{opacity:.45;cursor:not-allowed}
+.pt-hist{border-top:1px solid var(--line);padding:10px 0;display:grid;gap:6px;font-size:13px}.pt-hscore{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.pt-hscore>b{font-size:18px;margin-right:4px}.pt-hbtn{display:flex;gap:8px;flex-wrap:wrap}.pt-hbtn .btn{text-decoration:none;color:inherit}
+.pt-bar{position:sticky;top:41px;z-index:4;display:flex;gap:12px;align-items:center;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--line)}.pt-bar .sp,.pt-move .sp{flex:1}
+.pt-clock{font-size:18px;font-weight:700}.pt-clock.low{color:var(--bad)}
+.pt-navbox summary{cursor:pointer;padding:2px 0}.pt-navg{display:grid;grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:5px;margin-top:8px}
+.pt-navg button{padding:0;min-height:38px;font-size:12px;font-family:ui-monospace,Menlo,monospace}.pt-navg button.ans,.pt-legend .ans{background:var(--acc)!important;color:#fff;border-color:var(--acc)}.pt-navg button.flg,.pt-legend .flg{box-shadow:inset 0 0 0 2px #e0a526}.pt-navg button.cur,.pt-legend .cur{outline:2px solid var(--ink);outline-offset:1px}
+.pt-legend{margin-top:8px;font-size:12px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}.pt-legend .sw{display:inline-block;width:14px;height:14px;border-radius:3px;border:1px solid var(--line);margin-left:6px}
+.ch.sel{border-color:var(--acc);box-shadow:inset 0 0 0 1px var(--acc)}.ch.sel .L{background:var(--acc)!important;color:#fff;border-color:var(--acc)}
+.pt-sa{display:flex;gap:8px;margin-top:8px}.pt-move{display:flex;gap:8px;align-items:center;margin:12px 0}.pt-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:18px}
+.pt-res{display:flex;gap:20px;flex-wrap:wrap;align-items:center}.pt-big .n{font-size:46px;font-weight:800;line-height:1}.pt-blocks{display:flex;gap:10px;flex:1;flex-wrap:wrap}.pt-blk{flex:1;min-width:90px;border:1px solid var(--line);border-radius:8px;padding:8px 10px}.pt-blk .n{font-size:24px;font-weight:700}.pt-blk .bar{margin-top:6px}
+.pt-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.pt-actions .btn{text-decoration:none;color:inherit}
+@media (max-width:520px){.pt-res{flex-direction:column;align-items:stretch}.pt-blocks{flex-wrap:nowrap}.pt-blk{min-width:0;padding:8px}.pt-six{grid-template-columns:1fr}.pt-bar{top:44px}.pt-navg{grid-template-columns:repeat(auto-fill,minmax(44px,1fr))}.pt-navg button{min-height:44px}.pt-res{gap:12px}.pt-big .n{font-size:40px}.pt input[type=number],.pt input:not([type]),.pt select{min-height:44px}.pt-move button{flex:1}.pt-move .sp{display:none}}
+html[data-theme=dark] .pt-val .warn,html.sysdark[data-theme=auto] .pt-val .warn{color:#e3c766}
+html[data-theme=dark] .ch.sel,html.sysdark[data-theme=auto] .ch.sel{border-color:var(--acc)!important}
+html[data-theme=dark] :is(.pt-navg button.ans,.pt-legend .ans),html.sysdark[data-theme=auto] :is(.pt-navg button.ans,.pt-legend .ans){background:#1f6f7a!important;color:#fff}
 </style></head><body>
 <nav id="nav"></nav>
 <main id="app"></main>
 
+<script src="./practice-core.js"></script><script src="./practice.js"></script>
 <script id="app-src" type="text/plain">
 const D=window.__D;
 const KEY='hfdqbank.v1';
@@ -97,11 +121,11 @@ const lecColor={};D.lectures.forEach((l,i)=>lecColor[l.lecture]=PAL[i%PAL.length
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 D.questions.forEach((q,i)=>{q.n=i+1});
 let view={mode:'q',block:'1'},ui={filter:'all',search:'',lec:'',shuffle:false,order:null,recall:false,asearch:'',open:{}};
-function route(){const h=location.hash.slice(1)||'f-1';const [m,b]=h.split('-');view={mode:m==='a'?'a':'q',tab:m,block:b||'1'};ui.lec='';ui.order=null;render()}
+function route(){const h=location.hash.slice(1)||'f-1';const [m,b]=h.split('-');view={mode:m==='a'?'a':m==='p'?'p':'q',tab:m,block:b||'1'};ui.lec='';ui.order=null;render()}
 window.addEventListener('hashchange',route);
 function nav(){const t=[];const on=(m,b)=>view.tab===m&&view.block===b?'on':'';for(const b of Object.keys(D.blocks)){const qb=D.questions.filter(q=>q.block===b);const nf=qb.filter(q=>q.tier==='first-pass').length,nb=qb.length-nf;
  t.push(`<a href="#f-${b}" class="${on('f',b)}">B${b} First-pass Qbank (${nf})</a>`,`<a href="#b-${b}" class="${on('b',b)}">B${b} Block Qbank (${nb})</a>`,`<a href="#a-${b}" class="${on('a',b)}">B${b} Atlas</a>`)}
- t.push(`<a href="#q-all" class="${on('q','all')}">All (${D.questions.length})</a>`);
+ t.unshift(`<a href="#p-test" class="${view.tab==='p'?'on':''}">📝 Practice Test</a>`);t.push(`<a href="#q-all" class="${on('q','all')}">All (${D.questions.length})</a>`);
  document.getElementById('nav').innerHTML=`<b>HFD Remediation</b>`+t.join('')+`<span style="flex:1"></span><button id="themebtn" onclick="cycleTheme()" aria-label="Color theme">${themeLabel()}</button>`}
 function themeLabel(){const t=document.documentElement.dataset.theme;return t==='dark'?'🌙 Dark':t==='light'?'☀️ Light':'◐ Auto'}
 function cycleTheme(){const h=document.documentElement,o=['auto','light','dark'];const t=o[(o.indexOf(h.dataset.theme)+1)%3];h.dataset.theme=t;localStorage.setItem('hfdqbank.theme',t);window.__applyTheme&&__applyTheme();const b=document.getElementById('themebtn');if(b)b.textContent=themeLabel()}
@@ -111,7 +135,7 @@ function lecturesIn(){return D.lectures.filter(l=>view.block==='all'||l.block===
 function status(q){const a=S.a[q.id];if(!a||!a.first)return'u';return (q.format==='short-answer'?a.first==='got':a.first===q.answer)?'c':'x'}
 const MATH_DELIMS=[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}];
 function mathify(el){if(el&&window.renderMathInElement){try{renderMathInElement(el,{delimiters:MATH_DELIMS,throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code','input','select','option']})}catch(e){console.warn('katex',e)}}}
-function render(){nav();view.mode==='a'?renderAtlas():renderQ();mathify(document.getElementById('app'))}
+function render(){nav();view.mode==='p'?PT.render(view.block):view.mode==='a'?renderAtlas():renderQ();mathify(document.getElementById('app'))}
 function renderQ(){
  const qs=D.questions.filter(inBlock);qs.forEach((q,i)=>q.n=i+1);const ans=qs.filter(q=>status(q)!=='u'),corr=ans.filter(q=>status(q)==='c');
  const lecs=lecturesIn().filter(l=>qs.some(q=>q.lecture===l));
@@ -149,13 +173,13 @@ function weak(qs){
 function concept(q){const t=(q.answer&&q.choices[q.answer])||q.stem;return t.split(/\s+/).slice(0,7).join(' ')+(t.split(/\s+/).length>7?'…':'')}
 function retryAll(){D.questions.filter(inBlock).forEach(q=>{if(status(q)==='x'){S.a[q.id].retry=true;delete S.a[q.id].last;delete S.a[q.id].reveal}});save();ui.filter='x';renderQ()}
 function matches(q){if(ui.lec&&q.lecture!==ui.lec)return false;
- const st=status(q);if(ui.filter==='u'&&st!=='u')return false;if(ui.filter==='c'&&st!=='c')return false;if(ui.filter==='x'&&st!=='x')return false;if(ui.filter==='f'&&!S.f[q.id])return false;
+ const st=status(q);if(ui.filter==='u'&&st!=='u')return false;if(ui.filter==='c'&&st!=='c')return false;if(ui.filter==='x'&&st!=='x')return false;if(ui.filter==='f'&&!S.f[q.id])return false;if(ui.filter==='m'&&!PT.missed()[q.id])return false;
  if(ui.search){const s=ui.search.toLowerCase();const hay=(q.stem+' '+(q.model_answer||'')+' '+Object.values(q.choices).join(' ')+' '+q.explanation+' '+Object.values(q.why||{}).join(' ')+' '+q.lecture).toLowerCase();if(!s.split(/\s+/).every(w=>hay.includes(w)))return false}
  return true}
 function list(){
  let qs=D.questions.filter(inBlock);const base=qs.filter(q=>(!ui.lec||q.lecture===ui.lec));
- const cnt={all:base.length,u:base.filter(q=>status(q)==='u').length,c:base.filter(q=>status(q)==='c').length,x:base.filter(q=>status(q)==='x').length,f:base.filter(q=>S.f[q.id]).length};
- document.getElementById('pills').innerHTML=[['all','All'],['u','Unanswered'],['c','Correct'],['x','Incorrect'],['f','Flagged']].map(([k,l])=>`<button class="pill ${ui.filter===k?'on':''}" onclick="ui.filter='${k}';list()">${l} <b class="mono">${cnt[k]}</b></button>`).join('');
+ const cnt={all:base.length,u:base.filter(q=>status(q)==='u').length,c:base.filter(q=>status(q)==='c').length,x:base.filter(q=>status(q)==='x').length,f:base.filter(q=>S.f[q.id]).length,m:base.filter(q=>PT.missed()[q.id]).length};
+ document.getElementById('pills').innerHTML=[['all','All'],['u','Unanswered'],['c','Correct'],['x','Incorrect'],['f','Flagged'],['m','Test-missed']].filter(([k])=>k!=='m'||cnt.m||ui.filter==='m').map(([k,l])=>`<button class="pill ${ui.filter===k?'on':''}" onclick="ui.filter='${k}';list()">${l} <b class="mono">${cnt[k]}</b></button>`).join('');
  if(ui.shuffle){if(!ui.order){ui.order=qs.map(q=>q.id).sort(()=>Math.random()-.5)}const pos=Object.fromEntries(ui.order.map((id,i)=>[id,i]));qs=[...qs].sort((a,b)=>pos[a.id]-pos[b.id])}
  const shown=qs.filter(matches);
  document.getElementById('showing').textContent=`Showing ${shown.length} of ${qs.length} questions`;
