@@ -447,7 +447,7 @@
     "B": "They periodically migrate out of their lacunae, travel to the Haversian canal to absorb nutrients, and return to their home matrix.",
     "C": "They depend on perpendicular Volkmann's canals that directly penetrate every single individual lacuna.",
     "D": "Nutrients diffuse directly through the calcified lamellae, which stay porous to small solutes because the hydroxyapatite crystals are loosely packed.",
-    "E": "Nutrients diffuse from the Haversian canal through a continuous network of tiny canaliculi, utilizing physical cell processes joined by gap junctions."
+    "E": "Diffusion through canaliculi from the Haversian canal, along cell processes joined by gap junctions."
    },
    "answer": "E",
    "explanation": "- Mechanism: The osteon's calcified matrix is impermeable to standard diffusion. Osteocytes survive by extending thin cytoplasmic processes through microscopic tunnels (canaliculi), where they form gap junctions with neighboring cells to share nutrients diffusing from the central Haversian canal.\n  - Supporting Quote:\n\n      - \"The previously discussed canaliculi run from the Haversian canal to the innermost ring of lacunae, and then from lacuna to lacuna, for diffusion of nutrients and oxygen to the outermost osteocytes of the osteon. Recall that osteocytes also extend cell processes along these canaliculi for communication with other osteocytes.\" (Page 24, Cartilage and Bone Guide)\n\nTempting but wrong: The calcified matrix does not allow diffusion; osteocytes depend on canaliculi that link their processes by gap junctions (Cartilage & Bone study guide).",
@@ -666,7 +666,7 @@
     "A": "Specialized anchoring zones that connect the outer periosteum directly to the endosteum.",
     "B": "Pathological woven bone structures caused by a localized lack of calcium.",
     "C": "Circumferential lamellae laid down by the periosteum that became trapped between newer osteons as the bone grew in diameter.",
-    "D": "Remnants of older, partially destroyed osteons left behind after osteoclast-mediated bone remodeling.",
+    "D": "Remnants of older osteons partly removed during osteoclast remodeling.",
     "E": "The very first uncalcified osteoid laid down by osteoblasts during early development."
    },
    "answer": "D",
@@ -929,7 +929,7 @@
    "choices": {
     "A": "Oligodendrocytes wrap axons in Type IV collagen sheets, while Schwann cells wrap them in lipid-rich cell membranes.",
     "B": "One oligodendrocyte myelinates a single segment of a single axon, whereas one Schwann cell can myelinate up to 50 different axons.",
-    "C": "One oligodendrocyte can myelinate segments of multiple axons (up to 50), whereas one Schwann cell can only myelinate one segment of one axon.",
+    "C": "One oligodendrocyte myelinates segments of many axons (up to 50); one Schwann cell myelinates one segment of one axon.",
     "D": "Each oligodendrocyte myelinates one segment of one axon, just like a Schwann cell, but CNS myelin has no nodes of Ranvier between segments.",
     "E": "Oligodendrocytes only myelinate unmyelinated axons, whereas Schwann cells selectively target nodes of Ranvier."
    },
@@ -1032,7 +1032,7 @@
    "lecture_match": "Connective Tissue",
    "stem": "Which connective tissue sheath in a peripheral nerve serves as a highly protective, metabolically active diffusion barrier, and what cellular specialization makes this barrier possible?",
    "choices": {
-    "A": "The perineurium, due to layers of epithelial-like cells joined together by tight junctions.",
+    "A": "Perineurium, from epithelial-like cell layers sealed by tight junctions.",
     "B": "The mesoneurium, due to the presence of continuous vascular fenestrations.",
     "C": "The epineurium, due to thick bundles of parallel Type I collagen fibers.",
     "D": "The endoneurium, due to a dense network of fibroblasts secreting ground substance.",
@@ -1294,7 +1294,7 @@
    "lecture_match": "Nervous System",
    "stem": "If an axon in the PNS is classified as \"unmyelinated,\" how does it physically interact with Schwann cells?",
    "choices": {
-    "A": "One Schwann cell supports several unmyelinated axons in simple cytoplasmic recesses, with no concentric myelin sheath.",
+    "A": "One Schwann cell holds several unmyelinated axons in cytoplasmic recesses, with no myelin sheath.",
     "B": "It is completely engulfed by a Schwann cell that wraps around it dozens of times without producing myelin lipids.",
     "C": "Each unmyelinated axon has its own Schwann cell, which forms a single thin loop of membrane around it without compacting into myelin.",
     "D": "It passes directly through the nucleus of the Schwann cell to receive structural metabolic support.",
@@ -1351,7 +1351,7 @@
    "stem": "During clinical blood collection, why does centrifuging a tube without an anticoagulant yield serum, whereas centrifuging a tube containing citrate or heparin yields plasma?",
    "choices": {
     "A": "Heparin and citrate bind fibrinogen and pull it out of solution, so plasma lacks clotting factors while serum keeps all of them.",
-    "B": "Without an anticoagulant, clotting consumes fibrinogen and other clotting factors into the clot; the liquid left over is serum.",
+    "B": "Without anticoagulant, clotting uses up fibrinogen and clotting factors; the fluid left is serum.",
     "C": "Citrate and heparin act as enzymes that synthesize extra albumin, transforming the liquid phase into plasma.",
     "D": "Anticoagulants force the plasma proteins to precipitate out of solution, leaving only serum at the top of the tube.",
     "E": "Anticoagulants chemically destroy the red blood cells, releasing intracellular fluid that dilutes serum into plasma."
@@ -1480,7 +1480,7 @@
    "choices": {
     "A": "Major basic protein (MBP) to damage the parasite; heparin to anticoagulate the surrounding tissue and limit clot-driven damage.",
     "B": "Myeloperoxidase to damage the parasite; collagenase to digest the surrounding extracellular matrix.",
-    "C": "Major basic protein (MBP) to damage the parasite; histaminase to degrade histamine and limit allergic inflammation.",
+    "C": "MBP damages the parasite; histaminase degrades histamine to limit allergic inflammation.",
     "D": "Eosinophilic cationic protein (ECP) to damage the parasite; myeloperoxidase to synthesize toxic bleach.",
     "E": "Histamine to damage the parasite; heparin to degrade local blood clots."
    },
@@ -1530,7 +1530,7 @@
    "lecture_match": "Blood Cells",
    "stem": "What is the functional consequence of basophil degranulation into the bloodstream during an acute hypersensitivity reaction?",
    "choices": {
-    "A": "Vasodilation and increased vascular permeability of venules mediated by the release of histamine.",
+    "A": "Histamine-driven vasodilation and increased venular permeability.",
     "B": "Extensive local tissue destruction driven by the sudden activation of myeloperoxidase.",
     "C": "Rapid vasoconstriction of large elastic arteries mediated by direct calcium release.",
     "D": "Immediate formation of a dense fibrin network to isolate the allergen.",
@@ -1730,7 +1730,7 @@
     "A": "B-lymphocytes only exist in the lymph nodes and are never found in peripheral blood smears.",
     "B": "B-lymphocytes completely lack a nucleus, while T-lymphocytes have a bi-lobed nucleus.",
     "C": "T-lymphocytes are packed with large pink eosinophilic granules, whereas B-lymphocytes are packed with purple granules.",
-    "D": "Both are small round cells with a condensed nucleus and a thin rim of cytoplasm; only surface-marker staining separates them.",
+    "D": "Both are small round cells, dense nucleus, thin cytoplasm rim; only surface markers separate them.",
     "E": "B-lymphocytes are noticeably larger with abundant basophilic cytoplasm, so only T-lymphocytes need surface marker staining to be identified."
    },
    "answer": "D",
@@ -1935,7 +1935,7 @@
    "lecture_match": "Skin",
    "stem": "Which of the following describes the correct molecular pathway of melanin synthesis, transport, and delivery within the epidermis?",
    "choices": {
-    "A": "Melanocytes make melanin from tyrosine via tyrosinase, package it in melanosomes, and pass them to keratinocytes (cytocrine secretion), where they cap the nucleus.",
+    "A": "Melanocytes make melanin (tyrosine via tyrosinase), package it in melanosomes, and transfer it to keratinocytes, where it caps the nucleus.",
     "B": "Melanocytes secrete raw DOPA directly into the dermis, where fibroblasts convert it into a protective pigment matrix.",
     "C": "Melanosomes synthesize tyrosine in the stratum corneum, then migrate basally to be absorbed by melanocytes.",
     "D": "Keratinocytes convert tyrosine to DOPA via tyrosinase, package melanin into melanosomes, and pass them to melanocytes of the stratum basale, which cap their nuclei.",
@@ -1994,7 +1994,7 @@
     "A": "Albinism involves a complete loss of keratinocytes; vitiligo involves the overproduction of lamellar granules.",
     "B": "Albinism is characterized by an autoimmune destruction of melanocytes; vitiligo is a genetic defect in tyrosinase.",
     "C": "Albinism is a genetic absence of melanocytes from the epidermis; vitiligo is a genetic lack of functional tyrosinase in otherwise normal melanocytes.",
-    "D": "Albinism: normal melanocyte numbers but no functional tyrosinase (genetic); vitiligo: autoimmune destruction of the melanocytes.",
+    "D": "Albinism: normal melanocytes lacking functional tyrosinase (genetic); vitiligo: autoimmune loss of melanocytes.",
     "E": "Albinism is caused by UV damage to melanocytes; vitiligo is caused by a nutritional lack of tyrosine."
    },
    "answer": "D",
@@ -2214,7 +2214,7 @@
    "stem": "Which of the following correctly pairs the specialized non-keratinocyte cell of the epidermis with its correct embryonic origin and primary physiological function?",
    "choices": {
     "A": "Langerhans cell: endodermal origin; secretes sebum to lubricate the hair follicle.",
-    "B": "Merkel cell: ectodermal origin; functions as a high-sensitivity mechanoreceptor associated with sensory nerve endings.",
+    "B": "Merkel cell: ectoderm; mechanoreceptor paired with sensory nerve endings.",
     "C": "Merkel cell: mesodermal origin; acts as an antigen-presenting immune cell.",
     "D": "Merkel cell: neural crest origin; synthesizes melanin and transfers it to neighboring keratinocytes.",
     "E": "Langerhans cell: neural crest origin; synthesizes pigment to protect against UV radiation."
@@ -2330,7 +2330,7 @@
     "B": "Melanocytes secrete angiostatin, which keeps the epidermis vessel-free; cells survive by digesting dead stratum corneum cells.",
     "C": "The epidermis is avascular; its cells survive on nutrients delivered by lymphatic capillaries that run up between the dermal papillae.",
     "D": "High hydrostatic pressure in the stratum basale pushes vessels back; epidermal cells survive by synthesizing their own nutrients from sebum.",
-    "E": "The epidermis is an avascular tissue; cells survive via the diffusion of oxygen and nutrients from capillary loops located in the dermal papillae."
+    "E": "The epidermis is avascular; its cells live on oxygen and nutrients diffusing from capillary loops in the dermal papillae."
    },
    "answer": "E",
    "explanation": "- Explanation: Like all epithelia, the epidermis is completely avascular. Blood vessels do not cross the basement membrane. To survive, the living layers of the epidermis rely entirely on the passive diffusion of oxygen and nutrients from the microvascular capillary loops situated in the dermal papillae.\n  - Supporting Quotes:\n\n      - \"Epidermis: The superficial, cellular layer... It is avascular, meaning it does not have its own blood supply. The cells of the epidermis rely on diffusion of nutrients from blood vessels in the underlying dermis.\" (Skin study guide, Page 2)\n      - \"Papillary layer... contains capillary loops that extend into the dermal papillae... to provide nutrients to the avascular epidermis.\" (Skin study guide, Page 5)\nPart 3: Vascular System Answers\n\nTempting but wrong: Nutrients diffuse from blood capillary loops in the dermal papillae, not from lymphatics.",
@@ -2386,7 +2386,7 @@
     "B": "Endothelium-derived factors act purely as physical insulators and have no chemical influence on smooth muscle cells.",
     "C": "Nitric oxide and prostacyclin stimulate smooth muscle contraction, while endothelin-1 stimulates relaxation.",
     "D": "Nitric oxide and endothelin-1 both stimulate smooth muscle relaxation (vasodilation), while prostacyclin is the main endothelial vasoconstrictor.",
-    "E": "Nitric oxide and prostacyclin stimulate smooth muscle relaxation (vasodilation), while endothelin-1 stimulates smooth muscle contraction (vasoconstriction)."
+    "E": "NO and prostacyclin relax smooth muscle (vasodilation); endothelin-1 contracts it (vasoconstriction)."
    },
    "answer": "E",
    "explanation": "- Explanation: The endothelium is a highly active metabolic barrier. It synthesizes and secretes several vasoactive molecules that diffuse into the adjacent tunica media to regulate smooth muscle tone: nitric oxide (NO) and prostacyclin act as potent vasodilators (relaxing smooth muscle), whereas endothelin-1 is a powerful vasoconstrictor (contracting smooth muscle).\n  - Supporting Quotes:\n\n      - \"The endothelium is not just a simple physical barrier... It secretes vasoactive agents that regulate the tone of the underlying smooth muscle cells: Nitric oxide and prostacyclin (which cause vasodilation)... Endothelin-1 (which causes vasoconstriction)...\" (Vascular study guide, Page 2)\n\nTempting but wrong: Endothelin-1 is the endothelial vasoconstrictor; NO and prostacyclin both relax smooth muscle.",
@@ -2491,7 +2491,7 @@
    "lecture_match": "Vascular System",
    "stem": "Why are arterioles classified as the primary \"resistance vessels\" of the cardiovascular system?",
    "choices": {
-    "A": "Their small lumen and 1–2 layers of medial smooth muscle can contract or relax to regulate blood pressure and organ perfusion.",
+    "A": "Their narrow lumen and 1–2 smooth muscle layers adjust tone to set pressure and perfusion.",
     "B": "They have a wide lumen and a tunica media of many smooth muscle layers that stores elastic recoil energy to keep blood pressure steady during diastole.",
     "C": "They contain valves that physically resist the backward flow of blood into capillaries.",
     "D": "Their walls consist of a massive tunica adventitia that resists external physical compression.",
@@ -2551,7 +2551,7 @@
     "B": "By forcing macromolecules through large open fenestrations in the endothelial cell body.",
     "C": "By temporarily dissolving the zonula occludens to allow paracellular flow.",
     "D": "By utilizing retrograde dynein motors to walk the molecules along the basal lamina.",
-    "E": "By utilizing pinocytotic vesicles to transport macromolecules across the cell cytoplasm via transcytosis."
+    "E": "Transcytosis in pinocytotic vesicles across the endothelial cytoplasm."
    },
    "answer": "E",
    "explanation": "- Explanation: Continuous capillaries have tight junctions (zonula occludens) that seal the space between endothelial cells, preventing paracellular leakage of large molecules. To transport larger macromolecules, they utilize pinocytotic vesicles that bud from the luminal surface, traverse the cell cytoplasm, and fuse with the basal membrane to release their cargo (transcytosis).\n  - Supporting Quotes:\n\n      - \"Continuous capillaries... characterized by a complete endothelial lining with tight junctions (zonula occludens) between cells... transport of large, water-soluble molecules occurs via pinocytotic vesicles, which transport substances across the cytoplasm of the endothelial cell (a process called transcytosis).\" (Vascular study guide, Page 5)\n\nTempting but wrong: Diaphragm-covered fenestrae belong to fenestrated capillaries; continuous capillaries move macromolecules in pinocytotic vesicles (transcytosis).",
@@ -2659,7 +2659,7 @@
     "B": "To allow exchange of large proteins and blood cells across an intact, continuous basal lamina that sieves cells by size as they cross the endothelium.",
     "C": "To prevent the entry of systemic hormones, isolating these organs metabolically.",
     "D": "To prevent blood cells from escaping into the tissue spaces, protecting the organs from internal hemorrhage.",
-    "E": "To let large proteins and whole blood cells (old or newly made) cross through large gaps and an incomplete basal lamina."
+    "E": "Large gaps and an incomplete basal lamina let proteins and whole blood cells pass."
    },
    "answer": "E",
    "explanation": "- Explanation: Discontinuous capillaries (sinusoids) possess large open fenestrations, no diaphragms, and an incomplete basal lamina. This highly open architecture is necessary in the liver (for metabolic screening of blood), spleen (for removal of old red blood cells), and bone marrow (to allow newly formed red and white blood cells to enter circulation).\n  - Supporting Quotes:\n\n      - \"Discontinuous capillaries, have endothelial cells that are fenestrated, but the holes in the body of the cell are larger... There are no diaphragms, and the basal lamina is incomplete, with holes in it. These are found in areas where extensive exchange between blood and tissue is needed, such as the liver, spleen, and bone marrow.\" (Vascular study guide, Page 6)\n\nTempting but wrong: Sinusoids have large gaps and an incomplete basal lamina; that discontinuity is what lets cells and large proteins cross.",
@@ -2821,7 +2821,7 @@
    "choices": {
     "A": "Large vessels require continuous lymphatic drainage to prevent local edema; small vessels drain directly into the adjacent veins.",
     "B": "The vasa vasorum acts to synthesize extra elastic fibers for large vessels; small vessels do not require elastic properties.",
-    "C": "Large vessel walls are too thick for diffusion from the lumen to reach the outer layers; small vessel walls are thin enough to be fed from the lumen.",
+    "C": "Large vessel walls are too thick to be fed by diffusion from the lumen; small vessel walls are thin enough.",
     "D": "The walls of large vessels are too thick for luminal oxygen to reach the deep layers, so the vasa vasorum supplies the tunica intima; small vessels have no intima to supply.",
     "E": "Large vessels undergo higher physical stretching, requiring a nervous system to coordinate relaxation; small vessels contract autonomously."
    },
@@ -2873,7 +2873,7 @@
    "choices": {
     "A": "The basement membrane; it appears folded because of the high concentration of desmosomes.",
     "B": "The external elastic lamina; it appears folded because of the high pressure of blood within the living tissue.",
-    "C": "The internal elastic lamina; it looks folded because the medial smooth muscle contracts after death and during fixation.",
+    "C": "Internal elastic lamina; folded because medial muscle contracts after death and fixation.",
     "D": "The internal elastic lamina; it appears folded because it is laid down in pleats so the artery can expand during systole without tearing.",
     "E": "The vasa vasorum; it appears folded to allow capillary loops to reach the endothelium."
    },
@@ -3090,7 +3090,7 @@
    "choices": {
     "A": "Simple columnar epithelium with motile cilia; they sweep lymphocytes from the bloodstream into the subcapsular sinus.",
     "B": "Simple cuboidal epithelium; chemokines open wide fenestrations between the cells so lymphocytes slip through without having to adhere first.",
-    "C": "Simple cuboidal epithelium; apical glycoproteins and integrins attract lymphocytes, which then exit the blood by diapedesis.",
+    "C": "Simple cuboidal cells whose apical glycoproteins and integrins bind lymphocytes, which then leave by diapedesis.",
     "D": "Simple squamous endothelium; they open wide intercellular fenestrations to allow passive filtration of lymphocytes.",
     "E": "Stratified cuboidal epithelium; they undergo holocrine secretion, shedding whole sheets of lymphocytes into the paracortex."
    },
@@ -3246,7 +3246,7 @@
    "choices": {
     "A": "The marginal zone, which surrounds the white pulp at its border with the red pulp.",
     "B": "The splenic cords of Billroth, which form thick nets surrounding the trabecular veins.",
-    "C": "The periarteriolar lymphoid sheath (PALS), which physically surrounds the central arteriole in the white pulp.",
+    "C": "The periarteriolar lymphoid sheath (PALS) around the central arteriole of white pulp.",
     "D": "The germinal centers of the splenic nodules, which are centered around penicillar arterioles.",
     "E": "The marginal zone, which forms a continuous barrier of epithelioreticular cells around the splenic capsule."
    },
@@ -3723,7 +3723,7 @@
     "A": "Dense regular connective tissue contains random, multi-directional collagen fibers to resist forces in all directions (located in the dermis).",
     "B": "Dense regular connective tissue consists of closely packed collagen fibers woven in alternating perpendicular layers to resist stress from several directions (located in the dermis and organ capsules).",
     "C": "Dense regular connective tissue is characterized by a high concentration of active macrophages and mast cells (located in the lamina propria).",
-    "D": "Dense regular connective tissue consists of closely packed, parallel collagen fibers aligned in the direction of unidirectional mechanical stress (located in tendons and ligaments).",
+    "D": "Dense regular: tightly packed parallel collagen fibers aligned with one-way stress (tendons, ligaments).",
     "E": "Dense regular connective tissue features a massive volume of amorphous ground substance with very few fibers (located in the umbilical cord)."
    },
    "answer": "D",
@@ -3831,7 +3831,7 @@
     "A": "The active fibroblast is a multinucleated giant cell with a prominent ruffled membrane.",
     "B": "The active fibroblast has a small, elongated, heterochromatic nucleus and pale eosinophilic cytoplasm because its rough ER has been replaced by smooth ER.",
     "C": "The active fibroblast is smaller, with a highly condensed pyknotic nucleus and no visible cytoplasm.",
-    "D": "It has a larger, oval, euchromatic nucleus with a prominent nucleolus and more basophilic cytoplasm (abundant rough ER and Golgi).",
+    "D": "Larger oval euchromatic nucleus, prominent nucleolus, more basophilic cytoplasm (rER, Golgi).",
     "E": "The active fibroblast contains massive lipid vacuoles that compress the nucleus to the periphery of the cell membrane."
    },
    "answer": "D",
@@ -3935,7 +3935,7 @@
     "A": "Hemidesmosomes are damaged (autoantibodies against BP180); leads to intraepidermal blistering because basal keratinocytes separate from one another (acantholysis).",
     "B": "Tight junctions are damaged; leads to rapid leakage of interstitial fluid across the stratum corneum without any physical cell separation.",
     "C": "Hemidesmosomes are damaged; leads to deep subepidermal blisters where the entire epidermis cleanly detaches from the dermis.",
-    "D": "Desmosomes are damaged (specifically autoantibodies against desmogleins); leads to intraepidermal blistering because keratinocytes separate from one another (acantholysis).",
+    "D": "Desmosomes (anti-desmoglein antibodies); keratinocytes separate (acantholysis), giving intraepidermal blisters.",
     "E": "Gap junctions are damaged; leads to complete loss of metabolic communication between the stratum basale and the stratum spinosum."
    },
    "answer": "D",
@@ -4297,7 +4297,7 @@
    "lecture_match": "Cartilage & Bone",
    "stem": "What cellular imbalance is responsible for the skeletal remodeling pathology seen in Osteoporosis?",
    "choices": {
-    "A": "Bone resorption by osteoclasts exceeds bone deposition by osteoblasts, leading to a net loss of bone mass and destruction of trabecular microarchitecture.",
+    "A": "Osteoclast resorption outpaces osteoblast deposition, so bone mass and trabecular structure are lost.",
     "B": "Osteoblasts differentiate directly into chondrocytes, replacing the bone matrix with hyaline cartilage.",
     "C": "Bone deposition by osteoblasts exceeds resorption by osteoclasts, but the new osteoid fails to mineralize, leaving soft, poorly calcified bone and bowing deformities.",
     "D": "Osteoclasts become largely inactive, so old bone is never remodeled and accumulates as dense, brittle bone with microcracks that cause fractures.",
@@ -4838,7 +4838,7 @@
    "lecture_match": "Male Reproductive",
    "stem": "During spermatogenesis, which cell type undergoes the transitional movement from the basal compartment into the adluminal compartment of the seminiferous tubule, and what cellular mechanism accommodates this shift?",
    "choices": {
-    "A": "Primary spermatocytes; via the transient opening and closing of tight junctions (zonula occludens) between adjacent Sertoli cells.",
+    "A": "Primary spermatocytes; Sertoli-cell tight junctions transiently open and reclose.",
     "B": "Secondary spermatocytes; by utilizing amoeboid motility to cross the interstitial fenestrations.",
     "C": "Early spermatids; via the secretion of matrix metalloproteinases that dissolve the regional basement membrane.",
     "D": "Spermatogonia; by establishing temporary hemidesmosomes with the basement membrane.",
@@ -4887,7 +4887,7 @@
    "stem": "How do the roles of Luteinizing Hormone (LH) and Follicle-Stimulating Hormone (FSH) contrast regarding their direct cellular targets and mechanical actions in maintaining intra-tubular hormone environments?",
    "choices": {
     "A": "LH elevates regional temperatures to $34^\\circ\\text{C}$, while FSH triggers the golgi phase of spermiogenesis.",
-    "B": "LH targets Leydig cells to produce testosterone, while FSH targets Sertoli cells to produce androgen-binding protein (ABP) which keeps testosterone localized.",
+    "B": "LH drives Leydig cells to make testosterone; FSH drives Sertoli cells to make ABP, which keeps testosterone local.",
     "C": "LH induces interstitial myoid cell contraction, while FSH directly regulates the tight junctions of the blood-testis barrier.",
     "D": "LH targets Sertoli cells to release androgen-binding protein (ABP), while FSH targets Leydig cells to stimulate testosterone production.",
     "E": "LH targets Leydig cells to produce testosterone, while FSH also targets Leydig cells to make androgen-binding protein (ABP) that carries testosterone into the lumen."
@@ -5104,7 +5104,7 @@
    "choices": {
     "A": "They are linked to Leydig cells by transient gap junctions that supply direct ATP.",
     "B": "They exist as fully isolated cells surrounded by a thick, non-permeable zona pellucida.",
-    "C": "They are held together as a spermatogenic syncytium via intercellular cytoplasmic bridges.",
+    "C": "They stay joined as a syncytium by intercellular cytoplasmic bridges.",
     "D": "They complete cytokinesis and separate, but each stays embedded in its own Sertoli cell pocket by tight junctions until spermiation.",
     "E": "They lose their nuclei entirely during the Golgi phase to maximize flagellar volume."
    },
@@ -5264,7 +5264,7 @@
    "choices": {
     "A": "The corpus spongiosum is encapsulated by a rigid dual-layer capsule to prevent urethral compression during tumescence.",
     "B": "Corpora cavernosa lack endothelial linings, whereas the corpus spongiosum is composed exclusively of smooth muscle.",
-    "C": "Both contain cavernous spaces lined by endothelium, but the corpus cavernosum is surrounded by the tunica albuginea, while the corpus spongiosum contains the urethra.",
+    "C": "Both have endothelium-lined cavernous spaces; the tunica albuginea wraps the cavernosa, the spongiosum carries the urethra.",
     "D": "Both contain endothelium-lined cavernous spaces, but the corpus spongiosum is wrapped by the thick tunica albuginea, while the corpora cavernosa carry the urethra.",
     "E": "The corpora cavernosa contain helicine veins, whereas the corpus spongiosum contains the vas deferens."
    },
@@ -5308,7 +5308,7 @@
    "choices": {
     "A": "The Müllerian ducts; initiated by Androgen Binding Protein.",
     "B": "The intermediate paraxial crest; initiated by direct maternal progesterone surges.",
-    "C": "The mesonephric (Wolffian) duct; initiated by testis determining factor encoded on the Y chromosome.",
+    "C": "Mesonephric (Wolffian) duct; triggered by Y-chromosome TDF.",
     "D": "The metanephric diverticulum; initiated by prostatic specific antigen.",
     "E": "The paramesonephric (Müllerian) ducts; initiated by testis determining factor encoded on the Y chromosome."
    },
@@ -5361,7 +5361,7 @@
     "A": "Extraglomerular mesangial cells, fenestrated Bowman's capsule, and loop of Henle cells; it filters based on positive charge attraction.",
     "B": "Afferent arteriolar myocytes, macula densa tight junctions, and podocyte foot processes; it filters via active transcellular transport.",
     "C": "Fenestrated capillary endothelium, a thin glomerular basement membrane, and podocyte filtration slits; it filters by size and favors passage of negatively charged proteins such as albumin.",
-    "D": "Fenestrated capillary endothelium, a thick fused glomerular basement membrane, and podocyte filtration slits; it filters based on molecular size and negative charge.",
+    "D": "Fenestrated endothelium, a thick fused GBM, and podocyte filtration slits; filters by size and negative charge.",
     "E": "Parietal epithelial cells, mesangial matrix, and proximal tubule microvilli; it filters based on hydrostatic pressure and lipophilicity."
    },
    "answer": "D",
@@ -5415,7 +5415,7 @@
    "stem": "If a patient develops an autoimmune disorder that selectively destroys the negative electrical charge of the glomerular basement membrane without altering physical pore size, which clinical finding is expected, and why?",
    "choices": {
     "A": "Glycosuria; because glucose molecules require negative charge gradients for reabsorption.",
-    "B": "Proteinuria; because proteins like albumin are normally repelled by the negative charge of the barrier.",
+    "B": "Proteinuria; albumin is normally repelled by the barrier's negative charge.",
     "C": "Hematuria; because red blood cells are normally held back by the negative charge rather than by the size of the pores.",
     "D": "Hematuria; because red blood cells are repelled by positive charges.",
     "E": "Anuria; because blood filtration entirely ceases when the charge is neutralized."
@@ -5525,7 +5525,7 @@
     "A": "Umbrella cells in the bladder wall sense mechanical stretch and directly release aldosterone into the renal vein.",
     "B": "Granular juxtaglomerular cells in the efferent arteriole sense $\\text{Na}^+$ in the tubular fluid, and the macula densa responds by releasing renin into the tubule lumen.",
     "C": "Principal cells in the collecting duct sense hydration levels and signal the urinary pole to expand the capsular space.",
-    "D": "The macula densa in the DCT senses $\\text{Na}^+$ or fluid flow changes, and granular juxtaglomerular cells in the afferent arteriole release renin.",
+    "D": "Macula densa (DCT) senses Na+/flow; granular JG cells of the afferent arteriole release renin.",
     "E": "Podocytes sense glucose and signal mesangial cells to contract the glomerular loops."
    },
    "answer": "D",
@@ -5637,7 +5637,7 @@
     "A": "The renal corpuscle filters blood and sits in the medulla alongside the loops of Henle, while the convoluted tubules that reabsorb and secrete are confined to the cortex.",
     "B": "The calyces are responsible for filtration and reside in the medulla; the loop of Henle resides exclusively in the fibrous capsule.",
     "C": "The renal pelvis is responsible for secretion and spans the renal pyramids; the corpuscle resides in the corticomedullary junction.",
-    "D": "The corpus (filtration) sits in the cortex; the tubule (PCT, loop of Henle, DCT) does reabsorption and secretion and spans cortex and medulla.",
+    "D": "Corpuscle (filtration) in the cortex; tubule (PCT, loop, DCT) reabsorbs and secretes across cortex and medulla.",
     "E": "The minor calyx is responsible for concentration and resides in the cortex; the major calyx resides in the renal column."
    },
    "answer": "D",
@@ -5691,7 +5691,7 @@
    "stem": "What unique cytological specialization distinguishes the superficial epithelial layer of the ureter and urinary bladder, and what mechanical property does it confer to these organs?",
    "choices": {
     "A": "Stratified columnar epithelium with goblet cells; secretes highly alkaline mucus to neutralize metabolic acids.",
-    "B": "Transitional epithelium with surface umbrella cells; provides a barrier against hypertonic urine and allows distension.",
+    "B": "Transitional epithelium with umbrella cells; a barrier to hypertonic urine that allows distension.",
     "C": "Non-keratinized stratified squamous epithelium; allows rapid transcellular water absorption during low pressure.",
     "D": "Pseudostratified columnar epithelium with cilia; coordinates unidirectional urine flow toward the urethra.",
     "E": "Transitional epithelium whose surface cells are linked by gap junctions; lets water and urea pass freely so the urine is concentrated during storage."
@@ -5803,7 +5803,7 @@
    "stem": "Where are mesangial cells located within the renal corpuscle, and what are their primary physiological and structural functions?",
    "choices": {
     "A": "They are positioned exclusively within the macula densa; they transport sodium into the distal convoluted tubule.",
-    "B": "They are located within the extracellular matrix between capillary loops; they provide structural support and phagocytose filtration debris.",
+    "B": "In the matrix between capillary loops; they support the loops and phagocytose filter debris.",
     "C": "They form the parietal layer of Bowman's capsule; they maintain the filtration space clear of urine.",
     "D": "They line the inner wall of the afferent arteriole; they act as high-pressure baroreceptors.",
     "E": "They form the visceral layer of Bowman's capsule around the capillaries; their foot processes create the filtration slits."
@@ -5858,7 +5858,7 @@
    "lecture_match": "Urinary System",
    "stem": "Which physiological feature accurately distinguishes juxtamedullary nephrons from cortical nephrons within the renal parenchyma?",
    "choices": {
-    "A": "Their renal corpuscles sit near the corticomedullary junction and their long loops of Henle reach deep into the medulla.",
+    "A": "Corpuscles near the corticomedullary junction; long loops of Henle reaching deep into the medulla.",
     "B": "Juxtamedullary nephrons have renal corpuscles located near the cortical surface and feature very short loops of Henle.",
     "C": "Juxtamedullary nephrons are completely devoid of a glomerular filtration barrier and filter blood via the vasa recta.",
     "D": "Juxtamedullary nephrons have renal corpuscles near the corticomedullary junction but short loops of Henle that stay in the outer medulla, leaving deep concentration to cortical nephrons.",
@@ -5966,7 +5966,7 @@
    "lecture_match": "Female Reproductive",
    "stem": "What precise cytological event occurs to the primary oocyte within a mature (Graafian) follicle just prior to ovulation, and at what stage does the ovulated oocyte remain arrested until fertilization?",
    "choices": {
-    "A": "It completes meiosis I to form a secondary oocyte and a polar body; arrested in metaphase of meiosis II.",
+    "A": "It finishes meiosis I (secondary oocyte + polar body) and arrests in metaphase II.",
     "B": "It undergoes direct cytokinesis to yield four identical spermatid-like ova; arrested in anaphase I.",
     "C": "It completes meiosis II entirely; arrested in the zygotic interphase.",
     "D": "It completes meiosis I to form a secondary oocyte and a polar body; arrested in prophase of meiosis I until fertilization.",
@@ -6026,7 +6026,7 @@
     "B": "It differentiates into the theca externa layer, which produces follicle-stimulating hormone.",
     "C": "It degenerates immediately into the corpus albicans, which secretes human chorionic gonadotropin (hCG).",
     "D": "It expands into an atretic follicle, which actively clears excess luteinizing hormone from the ovarian cortex.",
-    "E": "It collapses and forms the corpus luteum, which secretes large amounts of progesterone and smaller amounts of estrogen."
+    "E": "It forms the corpus luteum, which secretes mainly progesterone plus some estrogen."
    },
    "answer": "E",
    "explanation": "Explanation: The physical shell of the ovulated follicle remodels into a highly vascular luteal gland tasked with maintaining early pregnancy conditions via steroid secretion.\n\n      - Exact Quote: “The empty follicle collapses, fills with blood, and forms a structure called a corpus luteum. The corpus luteum secretes progesterone (and a smaller amount of estrogen).” [Female Guide, Page 3].\n\nTempting but wrong: The corpus luteum's main product in the luteal phase is progesterone, with smaller amounts of estrogen.",
@@ -6183,7 +6183,7 @@
    "stem": "What are the distinct structural layers of the uterine wall, and which layer undergoes profound cyclic remodeling and shedding while the other remains stable to regenerate the tissue?",
    "choices": {
     "A": "Endocervix and Ectocervix; the endocervix sheds its stratified squamous epithelium while the ectocervix remains stable.",
-    "B": "Functional layer (shed) and Basal layer (retained); both are subdivisions of the Endometrium, which sits on top of the muscular Myometrium.",
+    "B": "Functional layer (shed) and basal layer (retained), both parts of the endometrium over the myometrium.",
     "C": "Perimetrium and Myometrium; the myometrium sheds completely during menstruation while the perimetrium remains stable.",
     "D": "Functional layer (retained) and Basal layer (shed); both are subdivisions of the Endometrium, which sits on top of the muscular Myometrium.",
     "E": "Tunica albuginea and Corona radiata; the corona radiata undergoes cyclic shedding into the uterine lumen."
@@ -6234,7 +6234,7 @@
     "B": "Pseudostratified ciliated columnar shifts to simple cuboidal; it is the site where fertilization typically takes place.",
     "C": "Stratified squamous (endocervix) shifts to simple columnar (ectocervix); it is the site where HPV infects cells and is the source of cells sampled by a Pap smear.",
     "D": "Simple columnar epithelium shifts to stratified columnar; it is the site where progesterone is converted to active androgens.",
-    "E": "Simple columnar (endocervix) meets stratified squamous (ectocervix); this is where HPV infects cells, which can lead to dysplasia and cervical cancer."
+    "E": "Endocervical simple columnar meets ectocervical stratified squamous; HPV infects here, leading to dysplasia/cancer."
    },
    "answer": "E",
    "explanation": "Explanation: The abrupt squamocolumnar boundary at the cervix is highly vulnerable to oncogenic viral integration, making it the primary focal point of screening.\n\n      - Exact Quote: “Cervical transformation zone... Junction where simple columnar epithelium (of endocervix) shifts to stratified squamous epithelium (of ectocervix)... Major site for HPV infection $\\rightarrow$ cervical dysplasia $\\rightarrow$ cervical cancer. Target of Pap smear screening” [Female Guide, Page 5].\n\nTempting but wrong: The endocervix is simple columnar and the ectocervix stratified squamous; this option reverses them.",
@@ -6340,7 +6340,7 @@
    "choices": {
     "A": "Inactive breast shows abundant enlarged alveoli with scant stroma; lactating breast has sparse ducts separated by abundant fat, because milk is stored in the adipose tissue.",
     "B": "Inactive breast contains large, dilated alveoli filled with dense glycogen, while lactating breast tissue shows complete atrophy of the duct system.",
-    "C": "Inactive breast has sparse glands in abundant connective tissue and fat; lactating breast shows marked gland proliferation, milk-filled alveoli, and little stroma.",
+    "C": "Inactive: sparse glands in abundant stroma and fat; lactating: proliferated glands, milk-filled alveoli, little stroma.",
     "D": "Inactive breast tissue is lined by stratified squamous epithelium, while lactating breast tissue shifts exclusively to transitional epithelium.",
     "E": "Inactive breast contains extensive skeletal muscle bundles, while lactating breast tissue loses all muscular elements to maximize adipose deposition."
    },
@@ -6398,7 +6398,7 @@
     "B": "The flagellum sheds its middle piece mitochondria to generate a negative charge that liquefies the polar body.",
     "C": "Spermatozoa release progesterone to contract the peg cells, mechanically pulling the oocyte through the vitelline membrane.",
     "D": "Spermatozoa bind receptors on the oocyte plasma membrane first, then release acrosin and hyaluronidase from the middle piece to dissolve the corona radiata from the inside.",
-    "E": "Sperm get through the corona radiata, bind ZP receptors on the zona pellucida, and release hyaluronidase and acrosin from the acrosome to digest the zona."
+    "E": "Sperm pass the corona radiata, bind ZP receptors on the zona, and release acrosomal hyaluronidase and acrosin."
    },
    "answer": "E",
    "explanation": "Explanation: To breach the thick barrier of the egg, sperm must selectively bind ZP receptors and execute exocytosis of acrosomal digestive enzymes.\n\n      - Exact Quote: “Spermatozoa encounter the ova... dissociate the cells of the corona radiata... binds specific sperm receptors (ZP receptors) and initiates the acrosomal reaction. This involves release of enzymes (hyaluronidase and acrosin) from the acrosomal cap which digest the zona pellucida” [Top Hat Guide, Page 4].\n\nBest of luck with your studies\\! These detailed pathway and mechanism questions will serve as an excellent resource for mastering the complex physiological relationships in your upcoming exam.\n\nTempting but wrong: The acrosomal enzymes come from the acrosome over the head, and binding to the zona pellucida comes before reaching the oocyte membrane.",
@@ -6447,7 +6447,7 @@
    "lecture_match": "Cell Injury 1: Adaptation & Death",
    "stem": "During the pathogenesis of cardiac hypertrophy, what specific molecular events link mechanical stress or vasoactive agents to the ultimate morphological change in the cardiomyocyte?",
    "choices": {
-    "A": "Cell-surface receptors activate signal transduction pathways that switch on transcription factors (GATA4, NFAT, MEF2), increasing protein synthesis.",
+    "A": "Surface receptors trigger signaling that activates GATA4, NFAT and MEF2, raising protein synthesis.",
     "B": "Downregulation of BCL-2, allowing BAX to polymerize and synthesize sarcomeric proteins directly in the cytoplasm.",
     "C": "Mechanical stress activates mitotic cyclins that drive cardiomyocytes back into the cell cycle, so the heart enlarges by adding new myocytes rather than enlarging existing ones.",
     "D": "Rapid depletion of intracellular calcium pools, which triggers the genomic reprogramming of mature cardiomyocytes into embryonic stem cells.",
@@ -6563,7 +6563,7 @@
     "B": "Severe mitochondrial DNA damage alters ribosomal translation, causing existing squamous cells to synthesize columnar proteins.",
     "C": "Fully differentiated, mature squamous cells undergo phenotypic transdifferentiation into columnar cells in response to chronic acid exposure.",
     "D": "Metaplasia occurs when columnar cells from the stomach migrate up and replace the squamous epithelium that acid has destroyed, without any reprogramming of local cells.",
-    "E": "Metaplasia occurs via the genetic reprogramming of tissue stem cells rather than a phenotypic modification of already-differentiated mature cells."
+    "E": "It comes from reprogramming of tissue stem cells, not from mature differentiated cells changing phenotype."
    },
    "answer": "E",
    "explanation": "- Pathophysiology Breakdown: Metaplasia is a reversible adaptive response where one mature, fully differentiated cell type is replaced by another. This change does not occur because a mature cell physically shifts its structure (transdifferentiation). Rather, chronic irritation or stress reprogram local tissue-specific stem cells (or undifferentiated reserve cells) to differentiate down a new lineage that is better suited to withstand the hostile microenvironment.\n  - Exact Source Quote: > \"Metaplasia is defined as reversible change in which one adult cell type (epithelial or mesenchymal) is replaced by another adult cell type... mechanism: reprogramming of stem cells (NOT a phenotypic change of already-differentiated mature cells)\" (Cell injury 1 study guide, Page 5)\n\nTempting but wrong: Metaplasia comes from reprogramming of the tissue's own stem cells, not migration of mature cells from another organ (Cell Injury 1 study guide).",
@@ -6663,7 +6663,7 @@
     "B": "The downregulation of p53 and the subsequent failure of the cell to arrest in the G1 phase of the cell cycle.",
     "C": "The detachment of ribosomes from the rough endoplasmic reticulum and the accumulation of intracellular myelin figures.",
     "D": "The appearance of cytoplasmic blebs, loss of microvilli, and the deposition of lipid vacuoles within the cytoplasm.",
-    "E": "The inability to restore mitochondrial function (lack of ATP generation even after resolving the insult) and severe membrane damage."
+    "E": "Mitochondrial function cannot be restored (no ATP even after the insult ends), plus severe membrane damage."
    },
    "answer": "E",
    "explanation": "- Pathophysiology Breakdown: While cells can survive and recover from many structural insults (like ribosomal detachment or mild swelling), two specific, non-overlapping biochemical boundaries define the transition to irreversible injury (cell death): first, the absolute inability to restore mitochondrial oxidative phosphorylation (and thus, ATP synthesis) even when the offending stimulus is removed; and second, severe, structural disturbances in cell membrane integrity (allowing extracellular calcium influx and lysosomal enzyme leakage).\n  - Exact Source Quote: > \"Two phenomena consistently characterize irreversibility: 1. Inability to restore mitochondrial function (lack of oxidative phosphorylation and ATP generation) even after resolution of the original injury. 2. Severe disturbances in membrane function (cell membrane damage allows calcium influx and lysosomal leakage; mitochondrial membrane damage prevents ATP synthesis).\" (Cell injury 1 study guide, Page 7)\n\nTempting but wrong: Swelling and ER dilation are features of reversible injury; the point of no return is failure to restore mitochondrial function plus severe membrane damage.",
@@ -6828,7 +6828,7 @@
    "stem": "In the intrinsic (mitochondrial) pathway of apoptosis, how is the caspase cascade initiated following cellular stress or DNA damage?",
    "choices": {
     "A": "BCL-2 and BCL-XL homodimerize to form channels in the nuclear membrane, allowing transcription factors to activate caspase-3.",
-    "B": "BAX and BAK become dominant, forming channels in the outer mitochondrial membrane that allow cytochrome c to escape, bind to APAF-1, and activate initiator caspase-9.",
+    "B": "BAX/BAK form outer mitochondrial membrane channels; cytochrome c escapes, binds APAF-1, and activates caspase-9.",
     "C": "Perforin punches holes in the plasma membrane, permitting granzyme B to enter and directly cleave BCL-2 into active caspase-9.",
     "D": "FasL binds to the Fas receptor, causing the assembly of death domains that recruit and activate caspase-9.",
     "E": "BCL-2 and BCL-XL become dominant, forming channels in the outer mitochondrial membrane that let cytochrome c escape, bind APAF-1, and activate initiator caspase-8."
@@ -6936,7 +6936,7 @@
    "stem": "Which of the following clinical or physiological scenarios serves as a classic example of the intrinsic pathway of apoptosis driven by endoplasmic reticulum (ER) stress?",
    "choices": {
     "A": "The rapid necrosis of myocardial tissue following acute coronary artery occlusion and ischemia.",
-    "B": "Prostatic cell death and tissue shrinkage induced by treating benign prostatic hyperplasia (BPH) with a DHT-inhibitor drug.",
+    "B": "Prostatic cell death and shrinkage when BPH is treated with a DHT-inhibitor drug.",
     "C": "The elimination of autoreactive T cells via Fas-FasL interactions during thymic selection.",
     "D": "The removal of neutrophils from an inflammatory site after their activation, through binding of TNF to death receptors on their surface.",
     "E": "The destruction of virus-infected hepatocytes by cytotoxic T lymphocytes utilizing granzymes and perforins."
@@ -7038,7 +7038,7 @@
     "A": "Glutathione reductase converts hydrogen peroxide to water by oxidizing GSH to GSSG; glutathione peroxidase then converts GSSG back to reduced GSH using NADPH as the electron donor.",
     "B": "Glutathione peroxidase uses NADPH to reduce GSSG directly to water, while glutathione reductase uses oxygen to regenerate GSH in the peroxisomes.",
     "C": "Glutathione peroxidase traps free radicals in the lysosome, while glutathione reductase transfers electrons from iron to prevent the Fenton reaction.",
-    "D": "Glutathione peroxidase turns H2O2 (or hydroxyl radicals) into water by oxidizing GSH to GSSG; glutathione reductase regenerates GSH from GSSG using NADPH.",
+    "D": "Glutathione peroxidase reduces H2O2 to water, oxidizing GSH to GSSG; glutathione reductase restores GSH using NADPH.",
     "E": "Glutathione peroxidase converts superoxide to hydrogen peroxide, while glutathione reductase decomposes hydrogen peroxide using zinc cofactors."
    },
    "answer": "D",
@@ -7094,7 +7094,7 @@
     "A": "The radical oxidizes sulfhydryl groups on membrane pump proteins, which cross-link and break down, while the lipid bilayer itself stays intact.",
     "B": "The radical binds covalently to cholesterol, preventing the insertion of phospholipids and causing immediate membrane dissolution.",
     "C": "The radical activates phospholipase A2, which systematically cleaves all fatty acid chains at the glycerol backbone, releasing fatty acids.",
-    "D": "The radical attacks double bonds in polyunsaturated lipids of membranes, generating lipid peroxides, which then attack neighboring lipids in a propagating chain reaction.",
+    "D": "The radical attacks double bonds in membrane polyunsaturated lipids, forming lipid peroxides that propagate a chain reaction.",
     "E": "The radical oxidizes the polar head groups of sphingolipids, reversing the membrane's electrical charge and driving passive lysis."
    },
    "answer": "D",
@@ -7299,7 +7299,7 @@
     "A": "The toxin destroys the gallbladder, causing bile acids to back up into the liver parenchyma and emulsify structural cell membranes into fat droplets.",
     "B": "$CCl_3^{\\bullet}$ damages mitochondria first, so beta-oxidation stops; triglycerides pile up even though apolipoprotein synthesis and lipoprotein export continue normally.",
     "C": "Ribosomal detachment prevents the translation of carnitine palmitoyltransferase, locking fatty acids inside the cytoplasm.",
-    "D": "Lipid peroxidation of the ER membrane causes ribosomes to detach, halting the synthesis of apolipoproteins required to package and export triglycerides.",
+    "D": "ER lipid peroxidation detaches ribosomes, stopping the apolipoprotein synthesis needed to export triglycerides.",
     "E": "$CCl_3^{\\bullet}$ directly stimulates mitochondrial fatty acid synthase, leading to a 10-fold increase in de novo triglyceride synthesis."
    },
    "answer": "D",
@@ -7348,7 +7348,7 @@
     "A": "Direct-acting toxins are hydrophilic and circulate freely in plasma, while indirect-acting toxins must be transported by chylomicroons.",
     "B": "Direct-acting toxins target only extracellular structures like the basement membrane, while indirect-acting toxins enter the nucleus.",
     "C": "Direct-acting toxins must first be converted by CYP enzymes into reactive metabolites (e.g., carbon tetrachloride), whereas indirect-acting toxins damage cells in the form in which they are ingested (e.g., mercury).",
-    "D": "Direct-acting toxins injure cells in the form taken in (e.g., heavy metals); indirect-acting toxins must first be metabolized into reactive metabolites.",
+    "D": "Direct-acting toxins work as taken in (e.g., heavy metals); indirect-acting ones need metabolic activation first.",
     "E": "Direct-acting toxins induce only apoptosis, while indirect-acting toxins cause only liquefactive necrosis."
    },
    "answer": "D",
@@ -7393,7 +7393,7 @@
    "lecture_match": "Cell Injury 2: ROS & Toxins",
    "stem": "Which of the following environmental toxins, historically linked to industrial processes, is correctly matched with its mechanism or clinical presentation in human exposure?",
    "choices": {
-    "A": "Polychlorinated biphenyls (PCBs); act as CYP inducers and endocrine disruptors, historically used in electrical applications and plastics.",
+    "A": "PCBs; CYP inducers and endocrine disruptors once used in electrical equipment and plastics.",
     "B": "Dioxin; a direct-acting heavy metal used as a wood preservative that causes chloracne by binding the estrogen receptor in sebaceous glands.",
     "C": "Lead; causes developmental abnormalities and acts as a potent estrogen receptor blocker in the renal tubules.",
     "D": "Dioxin; a direct-acting heavy metal that destroys the skeletal muscle fibers by binding to actin filaments.",
@@ -7449,7 +7449,7 @@
     "B": "Coal-fired power plants released high levels of mercury vapor that dissolved into the water, converting to methylmercury and poisoning local high school students in 2007.",
     "C": "The Gorham Manufacturing Company (silversmithing) discharged cyanide plating baths into the pond, but the site never required remediation because cyanide breaks down quickly in water.",
     "D": "Textile mills dumped synthetic azo dyes directly into the pond, leading to widespread bladder cancer among workers due to direct-acting heavy metals.",
-    "E": "The Gorham Manufacturing Company (silversmithing) dumped waste containing metals, PCBs, and dioxin onto the ground and into the pond, which later needed major remediation."
+    "E": "Gorham Manufacturing (silversmithing) dumped metals, PCBs and dioxin on the ground and in the pond, which later needed remediation."
    },
    "answer": "E",
    "explanation": "- Pathophysiology Breakdown: Mashapaug Pond in Providence, Rhode Island, has a significant industrial legacy. For nearly a century, the Gorham Manufacturing Company operated a silver-plating and bronze-casting facility on its shores. Industrial discharges containing heavy metals (lead, copper, silver), volatile organic solvents (such as trichloroethylene), and combustion byproducts like dioxins and PCBs contaminated the soil, groundwater, and pond sediment. This contamination required extensive, multi-decade environmental remediation before a local high school (Alvarez High School) could be built on the reclaimed land.\n  - Exact Source Quote: > \"Mashapaug Pond's industrial legacy: The Gorham Manufacturing Company (silver and bronze manufacturing) historically dumped industrial waste, including heavy metals, solvents, PCBs, and dioxins, into the soil and pond, creating a highly toxic site that eventually required extensive environmental remediation.\" (Cell injury 2 study guide, Page 12)\nSection 3: Cell Injury 3 (Alcohol & Toxin Toxicity)\n\nTempting but wrong: The Gorham site left metals, PCBs and dioxin in soil and pond sediment and required major remediation (Cell Injury 2).",
@@ -7705,7 +7705,7 @@
     "B": "Kupffer cells transform into osteoblasts and lay down calcified matrices within the portal triad.",
     "C": "Hepatocytes transform into fibroblasts and deposit Type II collagen directly into the central veins.",
     "D": "Endothelial cells transform into smooth muscle cells, constricting the sinusoids and depositing elastin in the bile canaliculi.",
-    "E": "Hepatic stellate cells (Ito cells) transition into myofibroblasts, which lay down Type I and III collagen in the space of Disse."
+    "E": "Hepatic stellate (Ito) cells become myofibroblasts and lay down Type I/III collagen in the space of Disse."
    },
    "answer": "E",
    "explanation": "- Pathophysiology Breakdown: Under normal conditions, hepatic stellate cells (Ito cells) reside quietly in the perisinusoidal Space of Disse, serving as the body's primary storage site for Vitamin A. However, chronic exposure to acetaldehyde and inflammatory cytokines (like TGF-beta released by damaged hepatocytes and Kupffer cells) activates these cells. They lose their lipid droplets and differentiate into highly proliferative, contractile myofibroblasts. These myofibroblasts synthesize and deposit excessive amounts of Type I and Type III fibrillar collagen directly into the Space of Disse, obliterating endothelial fenestrations and driving portal hypertension and cirrhosis.\n  - Exact Source Quote: > \"Pathogenesis of liver fibrosis: Chronic injury activates hepatic stellate cells (Ito cells) in the space of Disse. Activated stellate cells transdifferentiate into myofibroblasts, which secrete large amounts of collagen (Types I & III), leading to fibrosis and the restructuring of liver architecture (cirrhosis).\" (Cell injury 3 study guide, Page 6)\n\nTempting but wrong: The collagen-producing cells in cirrhosis are hepatic stellate (Ito) cells in the space of Disse, depositing Type I and III collagen.",
@@ -7906,7 +7906,7 @@
    "stem": "What is the mechanism of action of N-acetylcysteine (NAC) when administered as an antidote for acetaminophen overdose?",
    "choices": {
     "A": "It acts as a CYP2E1 inducer that speeds conversion of acetaminophen to NAPQI so the drug is cleared before it can accumulate in the liver.",
-    "B": "It stimulates the formation of reduced glutathione (GSH) and directly binds to/detoxifies NAPQI, preventing hepatocyte necrosis.",
+    "B": "It boosts reduced glutathione (GSH) and binds and detoxifies NAPQI.",
     "C": "It directly inhibits ADH, preventing the conversion of ethanol to acetaldehyde.",
     "D": "It acts as a competitive inhibitor of CYP2E1, completely blocking the microsomal ethanol oxidizing system.",
     "E": "It upregulates the multi-drug resistance protein to pump unconjugated acetaminophen out of the hepatocyte."
@@ -7962,7 +7962,7 @@
    "stem": "Based on current pathological understanding, what is the underlying mechanism of Reye's syndrome in children, and what clinical precaution does this necessitate?",
    "choices": {
     "A": "It occurs when a child with a viral illness is given acetaminophen, which depletes glutathione and causes fulminant liver necrosis with encephalopathy; children with fevers should be given aspirin instead.",
-    "B": "Aspirin (ASA) given during a viral illness compounds a slight mitochondrial fatty acid oxidation defect, causing liver damage and encephalopathy; children with viral illnesses should not get ASA.",
+    "B": "Aspirin during a viral illness worsens a slight mitochondrial fatty acid oxidation defect, causing liver failure and encephalopathy; avoid ASA in such children.",
     "C": "It represents a direct-acting heavy metal toxicity caused by the combination of lead paint ingestion and viral fever; children require immediate chelation therapy.",
     "D": "It is caused by an IgE-mediated hypersensitivity reaction to acetaminophen during a viral infection; children should only be given aspirin.",
     "E": "It is a direct neurotoxic effect of acetaldehyde generated by the pediatric upregulation of CYP2E1; alcohol-based cough syrups are contraindicated in children."
@@ -8289,7 +8289,7 @@
     "B": "An initiator acting as an indirect-acting carcinogen once CYP enzymes activate it",
     "C": "A complete carcinogen that both mutates DNA and drives proliferation",
     "D": "A progression factor that enables metastasis directly",
-    "E": "A promoter that stimulates proliferation of susceptible target cells"
+    "E": "A promoter driving proliferation of susceptible cells"
    },
    "answer": "E",
    "explanation": "The material states that “Hormones may Function as Tumor Promoters” and that “Exposure to high levels of exogenous or endogenous estrogen for prolonged periods of time is associated with increased risks of breast cancer and endometrial cancer. Excess estrogen stimulates proliferation of endometrial cells.”\n\nTempting but wrong: The lecture classes estrogen as a promoter, which stimulates proliferation of target cells without being the initiating mutagen.",
@@ -8660,7 +8660,7 @@
    "choices": {
     "A": "E6 and E7 both function mainly by causing direct point mutations in host DNA",
     "B": "E6 activates NF-kappaB and telomerase; E7 activates cyclin D and BCL2",
-    "C": "E6 destroys p53 and increases telomerase; E7 destroys Rb and inhibits p21",
+    "C": "E6 destroys p53, raises telomerase; E7 destroys Rb, inhibits p21",
     "D": "E6 inserts near MYC; E7 activates Cyclin D transcription",
     "E": "E6 destroys Rb and increases telomerase; E7 destroys p53 and inhibits p21"
    },
@@ -8711,7 +8711,7 @@
    "lecture_match": "Microbial Carcinogenesis",
    "stem": "Why does persistent high-risk HPV infection carry much more malignant potential than transient infection?",
    "choices": {
-    "A": "Persistent infection is more likely to lead to viral integration and sustained loss of cell-cycle restraints.",
+    "A": "Persistence favors viral integration and lasting loss of cell-cycle control.",
     "B": "Transient infection is cleared before E6 and E7 are ever expressed in basal cells.",
     "C": "Persistent infection always produces invasive carcinoma directly.",
     "D": "Persistent infection keeps the viral genome episomal, so E2 stays intact and E6/E7 expression is maximized.",
@@ -9774,7 +9774,7 @@
    "choices": {
     "A": "Inhaled radon exposes alveoli to beta particles, which penetrate deeply despite the keratinizing layer",
     "B": "Alpha particles pass easily through keratinized skin into circulation",
-    "C": "Inhaled radon exposes susceptible alveoli, whereas the keratinizing skin layer blocks alpha injury",
+    "C": "Inhaled radon reaches alveoli; keratinized skin stops alpha particles",
     "D": "Radon is ingested and concentrates in bone marrow, where alpha particles act",
     "E": "Radon emits high-energy gamma rays that penetrate deeply into the thorax"
    },
@@ -10636,7 +10636,7 @@
    "lecture_match": "Childhood Tumors",
    "stem": "Which prognostic statement about Ewing sarcoma is most accurate from the PDFs?",
    "choices": {
-    "A": "Metastatic disease at presentation is the most important adverse prognostic factor",
+    "A": "Metastatic disease at presentation is the key adverse factor",
     "B": "The main prognostic factor is the specific EWSR1 fusion partner (FLI1 vs ERG)",
     "C": "Good prognosis is defined by less than 50% necrosis after neoadjuvant chemotherapy",
     "D": "Good prognosis is defined by more than 90% necrosis after neoadjuvant chemotherapy, the single most important factor",
@@ -11136,7 +11136,7 @@
     "A": "Epigenetic field reprogramming",
     "B": "Promoter-dependent reversible hyperplasia that persists after cessation",
     "C": "Bystander effect from radiation-damaged neighboring cells",
-    "D": "Field effect with persistence of initiated cells in exposed epithelium",
+    "D": "Field effect: initiated cells persist in exposed epithelium",
     "E": "Metastasis of the first primary tumor to the contralateral lung"
    },
    "answer": "D",
@@ -11394,7 +11394,7 @@
    "stem": "Which combination best describes the key molecular actions of HPV E6 and E7 that drive host cell-cycle dysregulation?",
    "choices": {
     "A": "E6 binds p53 and stabilizes it; E7 binds Rb and increases p21",
-    "B": "E6 binds p53 and recruits ubiquitin ligase; E7 binds Rb and inhibits p21",
+    "B": "E6 binds p53, recruits ubiquitin ligase; E7 binds Rb, inhibits p21",
     "C": "E6 activates Cyclin D; E7 activates telomerase",
     "D": "E6 binds Rb and recruits ubiquitin ligase; E7 binds p53 and inhibits p21",
     "E": "E6 activates telomerase only; E7 activates BCL2 and NF-kappaB"
@@ -12190,7 +12190,7 @@
    "choices": {
     "A": "It binds free radical scavengers such as glutathione so they can restore DNA",
     "B": "It scavenges radicals and reverses DNA radicals to normal DNA",
-    "C": "It binds the DNA radical so that free radical scavengers cannot reverse the damage",
+    "C": "It binds DNA radicals so scavengers cannot reverse the damage",
     "D": "It forms radicals from water directly, doubling indirect damage",
     "E": "It replaces missing bases at double-strand breaks"
    },
@@ -12596,7 +12596,7 @@
     "B": "≥0.5 Gy, whole-body exposure, over 24 hours",
     "C": "≥0.1 Gy, partial-body exposure, chronic over weeks",
     "D": "≥1 Gy, partial-body, non-penetrating beta radiation over minutes",
-    "E": "≥1 Gy, whole-body, penetrating radiation over minutes"
+    "E": "≥1 Gy, whole-body, penetrating, over minutes"
    },
    "answer": "E",
    "explanation": "“Acute Radiation Syndrome (ARS)” slide: “Required conditions for ARS to occur Large dose exposure threshold dose of 1 Gy and above. Whole body exposure. Penetrating form of radiation internal organs exposed. Short time interval of exposure over minutes.”\n\nTempting but wrong: ARS needs whole-body (or near whole-body) penetrating exposure delivered quickly; a localized beta burn does not qualify.",
@@ -13030,7 +13030,7 @@
    "stem": "In neuroblastoma, which single factor is emphasized as the most important prognostic factor, and how is it characterized?",
    "choices": {
     "A": "Site of origin in sympathetic ganglia; adrenal origin has best prognosis",
-    "B": "N-MYC amplification; always high-risk, overriding stage, age, and histology",
+    "B": "N-MYC amplification; always high-risk, trumping stage/age/histology",
     "C": "Presence of Homer-Wright rosettes; indicates benign behavior",
     "D": "Tumor stage; advanced stage always has good prognosis",
     "E": "Age at diagnosis; under 18 months always has good prognosis regardless of N-MYC status"
@@ -13201,7 +13201,7 @@
     "A": "Malignant supratentorial tumor with no association with prematurity",
     "B": "Malignant cerebellar tumor of glial cells that never spreads through CSF",
     "C": "Benign cerebellar tumor of astrocytes with no CSF spread",
-    "D": "Malignant cerebellar small round blue cell tumor with frequent CSF “drop metastases”",
+    "D": "Malignant cerebellar small round blue cell tumor; CSF \"drop metastases\"",
     "E": "Malignant cerebral small round blue cell tumor with leukocoria and Flexner-Wintersteiner rosettes"
    },
    "answer": "D",
@@ -13444,7 +13444,7 @@
    "choices": {
     "A": "Epithelium is avascular, so its cells divide in hypoxia, which directly mutates their DNA",
     "B": "Epithelial cells lack a basal lamina, so they invade the stroma easily",
-    "C": "Epithelial cells renew frequently, and frequent replication means more chances for genetic errors",
+    "C": "Epithelia renew often, so more replication means more errors",
     "D": "Epithelium arises only from ectoderm, which has the least stable genome",
     "E": "Epithelium is avascular, so immune surveillance is weak"
    },
@@ -14262,7 +14262,7 @@
     "A": "The stroma metabolizes the drug before it reaches the tumor cells",
     "B": "All tumor cells stop replicating and enter permanent senescence",
     "C": "Tumors become polyclonal as inflammatory cells merge with them",
-    "D": "A resistant subclone emerges and becomes dominant (tumor heterogeneity)",
+    "D": "A resistant subclone takes over (tumor heterogeneity)",
     "E": "Every tumor cell acquires the same resistance mutation at once under drug exposure"
    },
    "answer": "D",
@@ -14435,7 +14435,7 @@
     "B": "They lack the DNA repair enzymes needed to fix double-strand breaks",
     "C": "Their DNA is unusually exposed to ionizing radiation while circulating in the blood",
     "D": "They lack functional TP53 throughout development",
-    "E": "Their enzymes deliberately cut DNA to rearrange immunoglobulin or T-cell receptor genes"
+    "E": "They deliberately cut DNA to rearrange Ig or TCR genes"
    },
    "answer": "E",
    "explanation": "“Specific enzymes in lymphocytes intentionally break DNA for recombination of immunoglobulin chains or T-cell receptors. Utilization of these enzymes increases the likelihood that an erroneous gene recombination will happen.”\n\nTempting but wrong: Radiosensitivity isn't the reason given; programmed breaks for receptor recombination make translocations possible.",

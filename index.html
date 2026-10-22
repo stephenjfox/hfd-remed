@@ -81,7 +81,11 @@ html,body{overflow-x:hidden}
  .sq{width:16px;height:18px}.grid{grid-template-columns:1fr}
  .ev{margin-left:4px}.stem,.expl{word-break:break-word}
 }
-#themebtn{margin-left:6px;white-space:nowrap}
+#themebtn{margin-left:6px;white-space:nowrap}#xferbtn{margin-left:6px;white-space:nowrap}
+.xf-code{width:100%;box-sizing:border-box;font-size:12px;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:inherit;word-break:break-all;resize:vertical}
+.xf-err{color:#b42318;background:rgba(180,35,24,.08);border:1px solid rgba(180,35,24,.35);border-radius:8px;padding:8px 12px;margin:10px 0;font-size:14px}
+.xf-ok{border-color:var(--acc)}
+html[data-theme=dark] .xf-err,html.sysdark[data-theme=auto] .xf-err{color:#ff8a80}
 .katex{color:inherit;font-size:1.05em}.katex-display{overflow-x:auto;overflow-y:hidden}
 /* ---- practice test ---- */
 .pt h3{margin:0 0 8px;font-size:15px}.pt-six{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;margin-bottom:6px}
@@ -109,7 +113,7 @@ html[data-theme=dark] :is(.pt-navg button.ans,.pt-legend .ans),html.sysdark[data
 </style></head><body>
 <nav id="nav"></nav>
 <main id="app"></main>
-<script src="./practice-core.js"></script><script src="./practice.js"></script>
+<script src="./practice-core.js"></script><script src="./practice.js"></script><script src="./transfer-core.js"></script><script src="./transfer.js"></script>
 
 <script id="app-src" type="text/plain">
 const D=window.__D;
@@ -117,18 +121,19 @@ const KEY='hfdqbank.v1';
 const QID=Object.fromEntries(D.questions.map(q=>[q.id,q]));
 // answers are saved by stable option id (q.oid) and held here by display letter (see PTCore.optId)
 let S=PTCore.mapProgress(QID,JSON.parse(localStorage.getItem(KEY)||'{"a":{},"f":{}}'),PTCore.optLetter);
+const touch=id=>{if(S.a[id])S.a[id].t=Date.now()};
 const save=()=>localStorage.setItem(KEY,JSON.stringify(PTCore.mapProgress(QID,S,PTCore.optId)));
 const PAL=['#3b82f6','#db2777','#8b5cf6','#dc2626','#f59e0b','#a16207','#16a34a','#0d9488','#65a30d','#ca8a04','#64748b','#0ea5e9','#e11d48','#7c3aed','#059669','#d97706','#4f46e5','#be123c','#15803d','#0891b2','#9333ea','#b45309','#475569'];
 const lecColor={};D.lectures.forEach((l,i)=>lecColor[l.lecture]=PAL[i%PAL.length]);
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 D.questions.forEach((q,i)=>{q.n=i+1});
 let view={mode:'q',block:'1'},ui={filter:'all',search:'',lec:'',shuffle:false,order:null,recall:false,asearch:'',open:{}};
-function route(){const h=location.hash.slice(1)||'f-1';const [m,b]=h.split('-');view={mode:m==='a'?'a':m==='p'?'p':'q',tab:m,block:b||'1'};ui.lec='';ui.order=null;render()}
+function route(){const h=location.hash.slice(1)||'f-1';const [m,b]=h.split('-');view={mode:m==='a'?'a':m==='p'?'p':m==='x'?'x':'q',tab:m,block:b||'1'};ui.lec='';ui.order=null;render()}
 window.addEventListener('hashchange',route);
 function nav(){const t=[];const on=(m,b)=>view.tab===m&&view.block===b?'on':'';for(const b of Object.keys(D.blocks)){const qb=D.questions.filter(q=>q.block===b);const nf=qb.filter(q=>q.tier==='first-pass').length,nb=qb.length-nf;
  t.push(`<a href="#f-${b}" class="${on('f',b)}">B${b} First-pass Qbank (${nf})</a>`,`<a href="#b-${b}" class="${on('b',b)}">B${b} Block Qbank (${nb})</a>`,`<a href="#a-${b}" class="${on('a',b)}">B${b} Atlas</a>`)}
  t.unshift(`<a href="#p-test" class="${view.tab==='p'?'on':''}">📝 Practice Test</a>`);t.push(`<a href="#q-all" class="${on('q','all')}">All (${D.questions.length})</a>`);
- document.getElementById('nav').innerHTML=`<b>HFD Remediation</b>`+t.join('')+`<span style="flex:1"></span><button id="themebtn" onclick="cycleTheme()" aria-label="Color theme">${themeLabel()}</button>`}
+ document.getElementById('nav').innerHTML=`<b>HFD Remediation</b>`+t.join('')+`<span style="flex:1"></span><a href="#x-transfer" id="xferbtn" class="${view.mode==='x'?'on':''}" title="Move progress between devices">⇄ Transfer</a><button id="themebtn" onclick="cycleTheme()" aria-label="Color theme">${themeLabel()}</button>`}
 function themeLabel(){const t=document.documentElement.dataset.theme;return t==='dark'?'🌙 Dark':t==='light'?'☀️ Light':'◐ Auto'}
 function cycleTheme(){const h=document.documentElement,o=['auto','light','dark'];const t=o[(o.indexOf(h.dataset.theme)+1)%3];h.dataset.theme=t;localStorage.setItem('hfdqbank.theme',t);window.__applyTheme&&__applyTheme();const b=document.getElementById('themebtn');if(b)b.textContent=themeLabel()}
 const inBlock=q=>(view.block==='all'||q.block===view.block)&&(view.tab==='f'?q.tier==='first-pass':view.tab==='b'?q.tier!=='first-pass':true);
@@ -137,7 +142,7 @@ function lecturesIn(){return D.lectures.filter(l=>view.block==='all'||l.block===
 function status(q){const a=S.a[q.id];if(!a||!a.first)return'u';return (q.format==='short-answer'?a.first==='got':a.first===q.answer)?'c':'x'}
 const MATH_DELIMS=[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}];
 function mathify(el){if(el&&window.renderMathInElement){try{renderMathInElement(el,{delimiters:MATH_DELIMS,throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code','input','select','option']})}catch(e){console.warn('katex',e)}}}
-function render(){nav();view.mode==='p'?PT.render(view.block):view.mode==='a'?renderAtlas():renderQ();mathify(document.getElementById('app'))}
+function render(){nav();view.mode==='x'?XFER.render():view.mode==='p'?PT.render(view.block):view.mode==='a'?renderAtlas():renderQ();mathify(document.getElementById('app'))}
 function renderQ(){
  const qs=D.questions.filter(inBlock);qs.forEach((q,i)=>q.n=i+1);const ans=qs.filter(q=>status(q)!=='u'),corr=ans.filter(q=>status(q)==='c');
  const lecs=lecturesIn().filter(l=>qs.some(q=>q.lecture===l));
@@ -173,7 +178,7 @@ function weak(qs){
  <div style="display:flex;gap:8px"><button onclick="ui.filter='x';list()">Show incorrect</button><button class="pri" onclick="retryAll()">Retry all incorrect</button></div>`:'');
 }
 function concept(q){const t=(q.answer&&q.choices[q.answer])||q.stem;return t.split(/\s+/).slice(0,7).join(' ')+(t.split(/\s+/).length>7?'…':'')}
-function retryAll(){D.questions.filter(inBlock).forEach(q=>{if(status(q)==='x'){S.a[q.id].retry=true;delete S.a[q.id].last;delete S.a[q.id].reveal}});save();ui.filter='x';renderQ()}
+function retryAll(){D.questions.filter(inBlock).forEach(q=>{if(status(q)==='x'){S.a[q.id].retry=true;delete S.a[q.id].last;delete S.a[q.id].reveal;touch(q.id)}});save();ui.filter='x';renderQ()}
 function matches(q){if(ui.lec&&q.lecture!==ui.lec)return false;
  const st=status(q);if(ui.filter==='u'&&st!=='u')return false;if(ui.filter==='c'&&st!=='c')return false;if(ui.filter==='x'&&st!=='x')return false;if(ui.filter==='f'&&!S.f[q.id])return false;if(ui.filter==='m'&&!PT.missed()[q.id])return false;
  if(ui.search){const s=ui.search.toLowerCase();const hay=(q.stem+' '+(q.model_answer||'')+' '+Object.values(q.choices).join(' ')+' '+q.explanation+' '+Object.values(q.why||{}).join(' ')+' '+q.lecture).toLowerCase();if(!s.split(/\s+/).every(w=>hay.includes(w)))return false}
@@ -219,11 +224,11 @@ function saCard(q,a,st,missedN){const shown=a.reveal;
  <div class="kicker" style="margin-top:6px">Junqueira's answer</div><div class="expl">${esc(q.model_answer)}</div>${qaEv(q)}
  ${a.last?'':`<div style="display:flex;gap:8px"><button onclick="sa('${q.id}','got')" style="border-color:#9ad3ab;background:var(--goodbg)">I got it</button><button onclick="sa('${q.id}','miss')" style="border-color:#f0a8a8;background:var(--badbg)">I missed it</button></div>`}
  <div class="srcline">${esc(q.lecture)} · ${esc(q.source)}</div>${a.last?`<button onclick="retry('${q.id}')">Try again</button>`:''}</div>`}</div>`}
-function reveal(id){(S.a[id]||(S.a[id]={})).reveal=true;save();refreshCard(D.questions.find(x=>x.id===id))}
-function sa(id,v){const a=S.a[id];if(!a.first)a.first=v;a.last=v;if(v==='miss')a.missed=(a.missed||0)+1;save();refreshCard(D.questions.find(x=>x.id===id))}
+function reveal(id){(S.a[id]||(S.a[id]={})).reveal=true;touch(id);save();refreshCard(D.questions.find(x=>x.id===id))}
+function sa(id,v){const a=S.a[id];if(!a.first)a.first=v;a.last=v;if(v==='miss')a.missed=(a.missed||0)+1;touch(id);save();refreshCard(D.questions.find(x=>x.id===id))}
 function answer(id,L){const q=D.questions.find(x=>x.id===id);const a=S.a[id]||(S.a[id]={});if(a.last)return;
- if(!a.first)a.first=L;a.last=L;if(L!==q.answer)a.missed=(a.missed||0)+1;save();refreshCard(q)}
-function retry(id){delete S.a[id].last;delete S.a[id].reveal;save();refreshCard(D.questions.find(x=>x.id===id))}
+ if(!a.first)a.first=L;a.last=L;if(L!==q.answer)a.missed=(a.missed||0)+1;touch(id);save();refreshCard(q)}
+function retry(id){delete S.a[id].last;delete S.a[id].reveal;touch(id);save();refreshCard(D.questions.find(x=>x.id===id))}
 function flag(id){S.f[id]=!S.f[id];if(!S.f[id])delete S.f[id];save();refreshCard(D.questions.find(x=>x.id===id))}
 function refreshCard(q){const el=document.getElementById(q.id);if(el){el.outerHTML=card(q);mathify(document.getElementById(q.id))}
  const qs=D.questions.filter(inBlock),ans=qs.filter(x=>status(x)!=='u'),corr=ans.filter(x=>status(x)==='c');
